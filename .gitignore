@@ -1,0 +1,17 @@
+node_modules/
+dist/
+.openpaper/
+*.log
+.DS_Store
+apps/cli/dist/
+apps/cli/*.tgz
+# copied in by apps/cli/scripts/bundle.ts for the npm package
+apps/cli/README.md
+apps/cli/LICENSE
+
+# workspace data created by running abstract INSIDE the repo — never product code
+/sources/
+/drafts/
+/notes/
+/exports/
+/analysis/

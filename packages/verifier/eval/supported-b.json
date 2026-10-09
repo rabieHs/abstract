@@ -1,0 +1,23 @@
+[
+  {
+    "id": "s04",
+    "kind": "numeric",
+    "label": "supported",
+    "claim": "The bread recipe uses 250 g of flour and bakes for 35 minutes at 180°C.",
+    "passages": ["The dough combines 250 grams of flour, two eggs, and a teaspoon of salt. Bake for 35 minutes at 180°C, then cool on a rack for at least an hour before slicing."]
+  },
+  {
+    "id": "s05",
+    "kind": "hedged",
+    "label": "supported",
+    "claim": "A small tasting panel of 12 people suggests the new coffee blend may be less bitter than the original.",
+    "passages": ["In an informal tasting, 9 of 12 participants described the new blend as smoother and less bitter than the original roast. Given the small panel size, these results should be treated as preliminary."]
+  },
+  {
+    "id": "s06",
+    "kind": "synthesis",
+    "label": "supported",
+    "claim": "Drip irrigation raised tomato yield from 3.1 to 4.2 kg per plant while cutting water use by roughly a third.",
+    "passages": ["Plants on drip irrigation produced 4.2 kg of tomatoes per plant over the season, compared with 3.1 kg for the hand-watered rows. Metered water consumption for the drip rows was about one third lower."]
+  }
+]

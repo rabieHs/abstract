@@ -1,0 +1,218 @@
+[
+ {
+  "id": "xa1",
+  "kind": "direct",
+  "label": "supported",
+  "claim": "In the Meridian Test Kitchen trial, blind tasters rated the levain batch higher for aroma complexity than the instant-yeast batch.",
+  "passages": [
+   "In a side-by-side trial at the Meridian Test Kitchen, bakers proofed two batches of the same 68%-hydration baguette dough at 24\u00b0C. Batch A used instant yeast at 1.1% of flour weight; Batch B used a stiff levain at 20% inoculation. Batch A doubled in 95 minutes, while Batch B required 4.5 hours. Blind tasters (n=22) rated Batch B higher for aroma complexity, with a mean score of 7.8 versus 6.1 on a 9-point scale. Crumb analysis showed Batch B's average alveolus diameter was 3.2 mm, compared with 2.4 mm for Batch A. Crust color, measured by lightness value, did not differ meaningfully between batches."
+  ]
+ },
+ {
+  "id": "xa2",
+  "kind": "numeric",
+  "label": "supported",
+  "claim": "In the Cook's Ledger trial, pork chops rested for 10 minutes lost 14 mL less juice on average than chops sliced immediately.",
+  "passages": [
+   "Cook's Ledger tested how resting time affects juice loss in 450 g pan-seared pork chops cooked to 63\u00b0C. Chops sliced immediately lost an average of 21 mL of juice on the cutting board; chops rested 5 minutes lost 12 mL; and chops rested 10 minutes lost 7 mL. Surface temperature dropped from 71\u00b0C to 55\u00b0C over the 10-minute rest. Tasters detected no difference in seasoning penetration among the three groups. The magazine repeated the trial with 300 g boneless chicken breasts and observed a similar pattern, with immediate slicing losing 14 mL versus 5 mL after a 10-minute rest."
+  ]
+ },
+ {
+  "id": "xa3",
+  "kind": "hedged",
+  "label": "supported",
+  "claim": "The Harbor Culinary Institute trial suggests that lower heat may yield more even onion caramelization, though it took roughly 18 minutes longer.",
+  "passages": [
+   "Instructors at the Harbor Culinary Institute ran an informal trial on onion caramelization, cooking 500 g batches of sliced yellow onions in identical 28 cm skillets. Batches held at medium-low heat (around 140\u00b0C pan temperature) reached uniform deep-brown color in 42 minutes with two stirs per minute. Batches at medium-high (around 190\u00b0C) developed scorched edges in 3 of 5 runs and finished unevenly in 24 minutes. Because pan placement on the range varied between sessions, the instructors cautioned against firm conclusions but noted the results suggest that lower heat may promote more even caramelization at the cost of roughly 18 extra minutes."
+  ]
+ },
+ {
+  "id": "xa4",
+  "kind": "mismatch",
+  "label": "unsupported",
+  "claim": "Batter Lab's panelists preferred the 70% cocoa batch, scoring it 8.4 out of 10.",
+  "passages": [
+   "Batter Lab compared three cocoa percentages in a standard 33\u00d723 cm brownie recipe baked at 175\u00b0C for 28 minutes. The 60% Dutch-process batch had a moisture reading of 24.5% after cooling; the 70% batch read 22.1%; and the 85% batch read 19.8%. Panelists (n=18) preferred the 70% batch overall, giving it 8.2 of 10, versus 7.4 for the 60% batch and 6.3 for the 85% batch. Center-set time, measured by toothpick test, was 26 minutes for the 60% batch and 29 minutes for the 85% batch. All batches used 4 eggs and 210 g of flour."
+  ]
+ },
+ {
+  "id": "xa5",
+  "kind": "mismatch",
+  "label": "unsupported",
+  "claim": "The Stonefield Baking Collective experiment demonstrated that longer autolyse improves ciabatta crumb openness.",
+  "passages": [
+   "A weekend experiment by the Stonefield Baking Collective examined whether autolyse duration affects ciabatta open crumb. Twelve loaves at 80% hydration were split into 20-minute, 60-minute, and 3-hour autolyse groups, each mixed with the same flour blend and 2.1% salt. The 3-hour group averaged a crumb openness score of 6.9 on the collective's 10-point ruler chart, versus 6.2 for the 60-minute group and 5.8 for the 20-minute group. Ambient temperature drifted from 21\u00b0C to 25\u00b0C across the day, and shaping was done by three different bakers, so the collective wrote that the trend only hints that longer autolyse might improve openness."
+  ]
+ },
+ {
+  "id": "xa6",
+  "kind": "mismatch",
+  "label": "unsupported",
+  "claim": "In the Skillet Report test, the absorption method used more energy at the hob than the boil-and-drain method.",
+  "passages": [
+   "Skillet Report timed stovetop rice methods in 2 L saucepans using 300 g of jasmine rice. The absorption method with a 1.5:1 water ratio finished in 17 minutes and left 2 g of residue stuck to the pan; the pasta-style boil-and-drain method finished in 13 minutes but left 9 g of starch residue in the strainer and produced softer grains, with a texture score of 5.9 versus 7.6 for absorption. Energy use, measured at the induction hob, was 0.21 kWh for absorption and 0.34 kWh for boil-and-drain. Testers noted the drained rice cooled faster on the plate."
+  ]
+ },
+ {
+  "id": "xa7",
+  "kind": "synthesis",
+  "label": "supported",
+  "claim": "In spring, Larkspur's bus network improved its ridership, on-time performance, and Route 9 run time, even as Routes 3 and 12 lost riders.",
+  "passages": [
+   "The Larkspur Transit Authority's spring service report covers the 14-line bus network for March through May. Weekday ridership averaged 61,200 boardings, up 4.3% from the winter quarter. On-time performance rose from 82.1% to 86.7% after the Route 9 corridor gained a dedicated bus lane between Alder Street and the Canal Bridge. Route 9 itself carried 9,400 weekday boardings, the network's highest, and its average end-to-end run time fell from 54 to 47 minutes. Complaints per 100,000 boardings dropped from 6.8 to 5.2. Two lines, Routes 3 and 12, saw ridership declines of 2.1% and 3.5% respectively."
+  ]
+ },
+ {
+  "id": "xa8",
+  "kind": "numeric",
+  "label": "supported",
+  "claim": "Quayside's April entries exceeded its March entries by 15,500.",
+  "passages": [
+   "Metro Harborline published April turnstile counts for its five downtown stations. Quayside recorded 412,000 entries, up from 396,500 in March; Foundry Square logged 358,200, down 1.9%; Cathedral Row logged 301,700; Beacon Hill 268,900; and Old Market 244,300. Saturday entries across the five stations averaged 71,400, compared with 96,800 on weekdays. The agency attributed Quayside's rise to a ferry schedule change on April 7 that added six morning sailings. Escalator availability at the five stations averaged 94.2%, with Cathedral Row lowest at 89.5%. Fare-gate faults fell to 37 incidents from 51 in March."
+  ]
+ },
+ {
+  "id": "xa9",
+  "kind": "direct",
+  "label": "supported",
+  "claim": "The Northgate tram extension's early weekday boardings exceeded the planning forecast.",
+  "passages": [
+   "The Northgate tram extension opened on 2 June with three new stops: Willow Park, Grange Terrace, and Northgate Depot. In its first four weeks, the extension averaged 5,850 weekday boardings, exceeding the planning forecast of 4,900. Peak-hour trams ran every 6 minutes, off-peak every 12. The park-and-ride at Northgate Depot, with 340 spaces, reached full occupancy by 08:10 on 14 of the 20 weekdays observed. Average journey time from Northgate Depot to Central Exchange was 22 minutes, one minute faster than the timetable. A temporary speed restriction near Grange Terrace was lifted on 19 June."
+  ]
+ },
+ {
+  "id": "xa10",
+  "kind": "mismatch",
+  "label": "unsupported",
+  "claim": "All six of Ridgeline Rail's commuter lines met the 90% punctuality target in the winter audit.",
+  "passages": [
+   "Ridgeline Rail's winter reliability audit covered its six commuter lines from December through February. Four lines \u2014 Ashford, Belmore, Crestway, and Dunmore \u2014 met the 90% punctuality target, with Crestway highest at 94.6%. The Eastvale and Fernhill lines fell short at 87.2% and 85.9%, largely due to a signal fault cluster near Junction 14 that caused 31 delay events in January. Rolling stock availability averaged 91.8% across the fleet. Cancelled services totaled 214, down from 268 the previous winter. The audit credits de-icing trains, deployed on 22 nights, with preventing an estimated 90 additional delay events."
+  ]
+ },
+ {
+  "id": "xa11",
+  "kind": "mismatch",
+  "label": "unsupported",
+  "claim": "Solvale's mid-year summary reported that helmet usage among riders rose 12% year over year.",
+  "passages": [
+   "The Solvale City bikeshare program released its 2025 mid-year summary. Riders took 1.84 million trips between January and June, a 12% increase year over year, with an average trip length of 2.9 km. E-bikes accounted for 58% of trips despite making up 41% of the 5,200-bike fleet. The busiest dock, at Fenwick Plaza, saw 61,300 departures. Rebalancing vans moved 310,000 bikes, and dock outages fell 17% after firmware updates in March. Membership stood at 48,700, including 9,200 on the reduced-fare plan. The summary notes that April was the single busiest month, with 364,000 trips."
+  ]
+ },
+ {
+  "id": "xa12",
+  "kind": "mismatch",
+  "label": "unsupported",
+  "claim": "The Island Loop carried 88,700 passengers in the second quarter.",
+  "passages": [
+   "Averill County's ferry service logged 96 sailing days in the second quarter, with 14 cancellations, 11 of them weather-related. The Harbor Run route carried 152,400 passengers and 38,700 vehicles; the Island Loop carried 88,100 passengers and no vehicles. Average crossing time on the Harbor Run was 41 minutes against a scheduled 45. Fuel consumption fell 6% after the MV Kestrel returned from an engine refit on 3 May. On-board concession sales totaled $412,000, up 9% year over year. A dockside gangway at Pier 6 was out of service for 12 days in June, requiring rerouting through Pier 4."
+  ]
+ },
+ {
+  "id": "xa13",
+  "kind": "hedged",
+  "label": "supported",
+  "claim": "The Calloway Ridge team notes that the recurring 0.02-magnitude dips may indicate grazing eclipsing binaries.",
+  "passages": [
+   "The Calloway Ridge Observatory's photometric survey of the open cluster NGC 2447 imaged 1,840 stars over 14 nights in filters g, r, and i. The team identified 22 candidate variable stars, of which 9 show periods consistent with delta Scuti pulsators. Light curves for three candidates display shallow 0.02-magnitude dips recurring every 3.1 days; the authors write that these dips may indicate grazing eclipsing binaries, though instrumental effects cannot yet be excluded. Astrometric cross-matching with the survey's second data release yielded proper motions for 1,712 stars. Cluster membership probability exceeded 80% for 640 stars. Follow-up spectroscopy is scheduled for the autumn observing season."
+  ]
+ },
+ {
+  "id": "xa14",
+  "kind": "synthesis",
+  "label": "supported",
+  "claim": "Merrow DR4 expanded the source catalog, added two new filters, and tightened photometric calibration relative to DR3.",
+  "passages": [
+   "Data release 4 of the Merrow Deep Sky Survey covers 3,200 square degrees in the southern sky to a limiting magnitude of 24.1 in the r band. The release catalogs 208 million sources, up from 141 million in DR3, and adds two new filters, u and z. Median seeing across the release was 0.86 arcseconds. The survey team flagged 4,600 previously uncataloged asteroid candidates and 312 transient events, of which 87 were confirmed supernovae by partner observatories. Photometric calibration improved to 0.011 magnitudes rms, from 0.017 in DR3. The full catalog is downloadable, while cutout services launch in October."
+  ]
+ },
+ {
+  "id": "xa15",
+  "kind": "numeric",
+  "label": "supported",
+  "claim": "The Palewater survey found optical counterparts for 61% of its 74,000 radio sources.",
+  "passages": [
+   "The Palewater Array's 18-month radio survey at 1.4 GHz mapped 620 square degrees and detected 74,000 sources above a flux threshold of 0.8 mJy. Of these, 2,140 sources show extended lobes exceeding 30 arcseconds, and 96 are giant radio galaxy candidates larger than 700 kiloparsecs. Cross-matching with optical catalogs found counterparts for 61% of sources. The survey's angular resolution is 6 arcseconds, and the median rms noise is 0.16 mJy per beam. Nineteen sources vary by more than 30% between the two observation epochs, spaced 14 months apart. A companion polarization catalog lists 5,300 sources with reliable rotation measures."
+  ]
+ },
+ {
+  "id": "xa16",
+  "kind": "mismatch",
+  "label": "unsupported",
+  "claim": "The site-testing campaign found that Mount Verity had better median seeing than Cerro Almandra.",
+  "passages": [
+   "Twin site-testing campaigns evaluated Cerro Almandra and Mount Verity for a planned 4-metre telescope. Over 200 nights, Cerro Almandra recorded a median seeing of 0.71 arcseconds and 62% fully clear nights; Mount Verity recorded 0.88 arcseconds and 71% clear nights. Precipitable water vapor was lower at Mount Verity, with a median of 2.1 mm versus 3.4 mm at Cerro Almandra. Wind speeds exceeded the 15 m/s dome-closure limit on 9 nights at Almandra and 21 nights at Verity. The committee weighted seeing at 40%, clear fraction at 30%, and water vapor at 20% in its final ranking, published in the March bulletin."
+  ]
+ },
+ {
+  "id": "xa17",
+  "kind": "mismatch",
+  "label": "unsupported",
+  "claim": "The Hollis Bay archival study established that TX Corvi's dominant period has genuinely decreased.",
+  "passages": [
+   "Analysing 11 years of archival plates digitized by the Hollis Bay Observatory, researchers examined the long-period variable TX Corvi. Its dominant period of 412 days appears to have shortened by 6 days over the archive span, and its mean brightness dimmed by 0.15 magnitudes. The team also found a possible secondary modulation near 38 days present in 7 of 11 seasons. They caution that plate-emulsion differences between the 1998 and 2004 batches could mimic slow brightness trends, and conclude that the data are consistent with, but do not establish, a genuine period decrease. A CCD monitoring program began in February to test the result."
+  ]
+ },
+ {
+  "id": "xa18",
+  "kind": "mismatch",
+  "label": "unsupported",
+  "claim": "After vetting, the Quenby campaign retained 44 planet candidates, including 12 with periods under 3 days.",
+  "passages": [
+   "The Quenby Transit Survey's third campaign monitored 96,000 stars in a Cygnus field for 68 nights, achieving 1.2-millimagnitude precision on stars brighter than magnitude 11. The pipeline flagged 310 transit-like signals; after vetting for eclipsing-binary contamination, 41 planet candidates remained, including 12 with periods under 3 days. Eight candidates orbit stars also observed by a partner spectrograph, and two show radial-velocity trends. Ground-based follow-up confirmed 5 candidates as planets, all hot Jupiters with radii between 1.1 and 1.4 Jupiter radii. False-positive rates were highest at the crowded field edge, where blending affected 23% of flagged signals."
+  ]
+ },
+ {
+  "id": "xa19",
+  "kind": "direct",
+  "label": "supported",
+  "claim": "In BenchWorks' web-browsing rundown, the 68 Wh Arclight 15 outlasted the 60 Wh model.",
+  "passages": [
+   "BenchWorks tested the Arclight 15 laptop's new 68 Wh battery configuration against last year's 60 Wh model, both with the same 2880\u00d71800 OLED panel at 150 nits. In the web-browsing rundown, the 68 Wh unit lasted 11 h 42 m versus 9 h 58 m. Under a sustained video-export load, the gap narrowed: 2 h 21 m against 2 h 4 m. Charging to 80% took 52 minutes with the bundled 100 W adapter. Fan noise peaked at 41 dBA during export on both units. The 68 Wh model weighs 40 g more, at 1.62 kg. Display brightness, thermals, and speaker output were otherwise unchanged between configurations."
+  ]
+ },
+ {
+  "id": "xa20",
+  "kind": "numeric",
+  "label": "supported",
+  "claim": "In TechMeter's roundup, the Corestone X2's sequential read outpaced the Vantail P7's by 250 MB/s.",
+  "passages": [
+   "TechMeter's SSD roundup benchmarked four 2 TB NVMe drives on the same PCIe 4.0 testbed. The Vantail P7 hit 7,100 MB/s sequential read and 6,500 MB/s write; the Corestone X2 reached 7,350 MB/s read and 6,850 MB/s write; the Nimbus Pro read at 6,900 MB/s; and the budget Drakon Q read at 5,000 MB/s. In the 45-minute sustained-write test, the Corestone X2's speed fell to 1,900 MB/s after its SLC cache filled at 410 GB written, while the Vantail P7 held 2,400 MB/s past 600 GB. Idle power draw ranged from 0.3 W (Drakon Q) to 0.8 W (Corestone X2)."
+  ]
+ },
+ {
+  "id": "xa21",
+  "kind": "hedged",
+  "label": "supported",
+  "claim": "PixelBench's results indicate the June firmware update may improve the Solara 9's autofocus stability.",
+  "passages": [
+   "PixelBench ran its camera latency suite on the Solara 9 phone before and after the June firmware update, capturing 200 shots per condition. Shutter lag in bright light dropped from 96 ms to 71 ms, and shot-to-shot time improved from 480 ms to 390 ms. In low light, lag was unchanged at roughly 210 ms. The reviewers observed occasional autofocus hunting indoors that appeared less frequent post-update \u2014 11 instances versus 19 \u2014 but because the test scenes could not be lit identically across sessions, they wrote that the update may improve autofocus stability rather than claiming a definitive fix."
+  ]
+ },
+ {
+  "id": "xa22",
+  "kind": "mismatch",
+  "label": "unsupported",
+  "claim": "GameRig Weekly found the RX Falcon 9070 averaged 118 fps in Ironhold and ran cooler than its predecessor.",
+  "passages": [
+   "GameRig Weekly benchmarked the RX Falcon 9070 graphics card across six titles at 1440p ultra settings. It averaged 144 fps in Skyline Racer, 118 fps in Ironhold, 97 fps in Duskfall, 156 fps in Arena Bloom, 88 fps in Terraform Zero, and 132 fps in Meridian Ops. Average board power was 242 W, with transient spikes to 311 W. Under a 30-minute loop of Duskfall, hotspot temperature stabilized at 84\u00b0C with fans at 1,750 rpm and 36 dBA. Overclocking added 6% average performance for 9% more power. The card's idle draw with dual 4K monitors measured 19 W."
+  ]
+ },
+ {
+  "id": "xa23",
+  "kind": "mismatch",
+  "label": "unsupported",
+  "claim": "AudioLab measured 26 dB of average low-frequency attenuation on the Corda Free earbuds.",
+  "passages": [
+   "AudioLab measured the Corda Free wireless earbuds' active noise cancellation across three bands. Low-frequency attenuation (60-250 Hz) averaged 24 dB, mid-band (250 Hz-1 kHz) averaged 19 dB, and high-band attenuation was 11 dB. Battery life with ANC on ran 6 h 10 m at 75 dB playback, extending to 9 h 5 m with ANC off. The transparency mode added 3.2 ms of latency. Bluetooth range through two interior walls was 14 m before dropouts. The charging case delivered 3.4 additional full charges. Multipoint pairing held two connections but dropped the second device in 4 of 20 handoff tests."
+  ]
+ },
+ {
+  "id": "xa24",
+  "kind": "mismatch",
+  "label": "unsupported",
+  "claim": "Keyboard Quarterly's rig testing showed that all of the Corvid Clicky samples lost their click point by 40 million cycles.",
+  "passages": [
+   "Keyboard Quarterly stress-tested five mechanical switch models to 60 million actuations on an automated rig. The Lumen Tactile's actuation force drifted from 52 g to 49 g; the Bastion Linear held within 1 g of its initial 45 g; the Corvid Clicky lost its click point audibly by 40 million cycles in 2 of 8 samples; the Onyx Silent gained 4 g of force; and the Petrel Speed showed contact chatter in 1 of 8 samples after 55 million cycles. Wobble, measured at the keycap stem, increased measurably on the Lumen and Onyx only. All five switch models retained electrical function to the end of testing."
+  ]
+ }
+]

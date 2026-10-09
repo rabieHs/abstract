@@ -1,0 +1,300 @@
+@import "tailwindcss";
+
+@theme {
+  --color-paper: #f4f4f2;
+  --color-surface: #ffffff;
+  --color-ink: #26282b;
+  --color-muted: #8a8f98;
+  --color-faint: #b3b7bd;
+  --color-linec: #e5e5e1;
+  --color-accent: #2f5382;
+  --color-accentsoft: #eaeff6;
+  --color-ok: #2e7d4f;
+  --color-oksoft: #e4f1e8;
+  --color-warn: #a8781f;
+  --color-warnsoft: #f6edd7;
+  --color-bad: #b3402e;
+  --color-badsoft: #f7e5e1;
+  --font-serif: Charter, "Bitstream Charter", "Sitka Text", Cambria, Georgia, serif;
+  --font-mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+}
+
+:root {
+  --paper: #f4f4f2;
+  --surface: #ffffff;
+  --ink: #26282b;
+  --muted: #8a8f98;
+  --faint: #b3b7bd;
+  --line: #e5e5e1;
+  --accent: #2f5382;
+  --accent-soft: #eaeff6;
+  --ok: #2e7d4f;
+  --bad: #b3402e;
+  --w-sidebar: 240px;
+  --w-files-panel: 256px;
+  --container-chat: 880px;
+  --shadow-sm: 0 1px 2px rgba(38, 40, 43, 0.06);
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+}
+
+/* DESIGN DIRECTIVE: squared, print-like, blueprint-clean.
+   No corners, no shadows — hairlines carry all structure. */
+* {
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+/* chat column: NOTHING may widen it — pres wrap, every box shrinks */
+.msgcol * {
+  min-width: 0;
+}
+.msgcol pre {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  max-width: 100%;
+}
+.msgcol img,
+.msgcol table {
+  max-width: 100%;
+}
+
+/* hatched divider band (blueprint section separator) */
+.hatch {
+  height: 10px;
+  flex: none;
+  background: repeating-linear-gradient(
+    45deg,
+    var(--line) 0,
+    var(--line) 1px,
+    transparent 1px,
+    transparent 7px
+  );
+  border-bottom: 1px solid var(--line);
+}
+
+/* bracketed nav link — mono, ref-style [ Label ] */
+.bracketlink {
+  display: block;
+  width: 100%;
+  padding: 6px 12px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  text-align: left;
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  transition: color 150ms, background 150ms;
+}
+.bracketlink:hover {
+  color: var(--ink);
+  background: var(--paper);
+}
+.bracketlink.active {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+body {
+  background: var(--paper);
+  overflow: hidden;
+}
+::selection {
+  background: var(--accent-soft);
+}
+
+/* step labels — mono, uppercase, wide tracking */
+.steplabel {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.rowbtn {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  font-size: 13px;
+  font-family: var(--font-sans);
+  background: none;
+  border: none;
+  border-left: 2px solid transparent;
+  text-align: left;
+  cursor: pointer;
+  color: var(--muted);
+  transition: background 150ms, color 150ms;
+}
+.rowbtn:hover {
+  background: var(--paper);
+}
+.rowbtn.active {
+  background: var(--paper);
+  color: var(--ink);
+  font-weight: 600;
+  border-left-color: var(--ink);
+}
+
+.op-newchat {
+  width: 100%;
+  text-align: left;
+  font-size: 13px;
+  font-weight: 500;
+  font-family: var(--font-sans);
+  padding: 9px 12px;
+  background: var(--ink);
+  border: 1px solid var(--ink);
+  color: var(--paper);
+  cursor: pointer;
+  transition: opacity 150ms;
+}
+.op-newchat:hover {
+  opacity: 0.85;
+}
+
+.wsrow {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  font-size: 14px;
+  font-family: var(--font-sans);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  text-align: left;
+  cursor: pointer;
+  color: var(--ink);
+  transition: border-color 150ms;
+}
+.wsrow:hover {
+  border-color: var(--accent);
+}
+
+.srctab {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  padding: 2px 7px;
+  background: none;
+  border: none;
+  color: var(--muted);
+  cursor: pointer;
+}
+.srctab:hover {
+  background: var(--paper);
+}
+.srctab.on {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.provtile {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  padding: 10px 12px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  cursor: pointer;
+  text-align: left;
+  font-family: var(--font-sans);
+  transition: border-color 150ms;
+}
+.provtile:hover {
+  border-color: var(--accent);
+}
+.provtile.on {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.pinchip {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  padding: 2px 7px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+/* shimmer sweep for live agent-step labels */
+@keyframes op-shimmer {
+  0% {
+    background-position: 150% 0;
+  }
+  100% {
+    background-position: -50% 0;
+  }
+}
+.op-shimmer {
+  background-image: linear-gradient(90deg, var(--muted) 35%, var(--ink) 50%, var(--muted) 65%);
+  background-size: 200% 100%;
+  background-repeat: no-repeat;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent !important;
+  animation: op-shimmer 1.4s linear infinite;
+}
+
+@keyframes op-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+}
+.op-pulse {
+  animation: op-pulse 2s ease infinite;
+}
+
+/* stepped-square activity indicator (blueprint spinner) */
+@keyframes op-blink {
+  0%,
+  100% {
+    opacity: 0.15;
+  }
+  30% {
+    opacity: 1;
+  }
+}
+/* astrolabe FUNCTIONING: the rete (star-map) and rule turn over the fixed plate,
+   at different rates and directions, the way the instrument computes the sky */
+@keyframes op-astro-rete {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes op-astro-rule {
+  to {
+    transform: rotate(-360deg);
+  }
+}
+.astro-rete {
+  transform-box: view-box;
+  animation: op-astro-rete 54s linear infinite;
+}
+.astro-rule {
+  transform-box: view-box;
+  animation: op-astro-rule 33s linear infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .astro-rete,
+  .astro-rule {
+    animation: none;
+  }
+}

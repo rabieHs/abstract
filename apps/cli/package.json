@@ -1,0 +1,50 @@
+{
+  "name": "abstract-cli",
+  "version": "0.1.0",
+  "description": "An AI research workbench that won't write a citation it can't trace to a real source — local-first, runs on your ChatGPT plan or your own API keys.",
+  "license": "Apache-2.0",
+  "keywords": [
+    "research",
+    "literature-review",
+    "citations",
+    "academic-writing",
+    "ai-agent",
+    "prisma",
+    "bibtex",
+    "chatgpt",
+    "local-first"
+  ],
+  "homepage": "https://github.com/rabieHs/abstract#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rabieHs/abstract.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rabieHs/abstract/issues"
+  },
+  "type": "module",
+  "bin": {
+    "abstract": "./dist/index.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "bun": ">=1.1"
+  },
+  "scripts": {
+    "dev": "bun run src/index.ts --no-open",
+    "bundle": "bun run scripts/bundle.ts"
+  },
+  "dependencies": {
+    "@napi-rs/canvas": "^1.0.2"
+  },
+  "devDependencies": {
+    "@abstract/core": "workspace:*",
+    "@abstract/server": "workspace:*"
+  },
+  "os": [
+    "darwin",
+    "linux"
+  ]
+}

@@ -1,0 +1,23 @@
+[
+  {
+    "id": "s01",
+    "kind": "numeric",
+    "label": "supported",
+    "claim": "A transit survey identified 412 exoplanet candidates, of which 37% orbit M-dwarf stars, with a median candidate radius of 2.3 Earth radii.",
+    "passages": ["We report results from the four-year photometric campaign. In total, 412 exoplanet candidates were identified after vetting for eclipsing-binary contamination. Of these, 37% orbit M-dwarf host stars, a fraction consistent with earlier occurrence-rate studies. The median radius of the candidate sample is 2.3 Earth radii, placing most candidates in the sub-Neptune regime. Follow-up radial-velocity observations have confirmed 58 candidates to date, and we estimate a false-positive rate of 11% for the remainder of the sample."]
+  },
+  {
+    "id": "s02",
+    "kind": "direct",
+    "label": "supported",
+    "claim": "In the reported benchmark, the log-structured storage engine sustained higher write throughput than the B-tree engine, while the B-tree engine delivered lower read latency on point queries.",
+    "passages": ["On the write-heavy workload (95% inserts), the log-structured merge engine sustained 184,000 operations per second, compared with 61,000 operations per second for the B-tree engine — a threefold advantage attributable to sequential I/O. The picture reverses for point reads: the B-tree engine served point queries at a median latency of 0.4 ms, while the LSM engine required 1.1 ms at the same load because reads may touch multiple sorted runs. Neither engine dominated across all workloads; the choice depends on the read/write mix."]
+  },
+  {
+    "id": "s03",
+    "kind": "numeric",
+    "label": "supported",
+    "claim": "Field measurements over a decade showed a median photovoltaic module degradation rate of 0.75% per year, with modules in hot climates degrading roughly twice as fast as those in temperate climates.",
+    "passages": ["The study aggregated performance data from 1,850 photovoltaic modules monitored over ten years across 42 sites. The median degradation rate was 0.75% of rated output per year. Climate was the dominant factor: modules at hot-climate sites degraded at a median of 1.1% per year, roughly double the 0.55% per year observed at temperate sites. Encapsulant browning and solder-bond fatigue were the most frequently observed failure modes in the hot-climate cohort."]
+  }
+]

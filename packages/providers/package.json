@@ -1,0 +1,17 @@
+{
+  "name": "@abstract/providers",
+  "version": "0.1.0",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "dependencies": {
+    "@abstract/core": "workspace:*",
+    "@ai-sdk/anthropic": "^2",
+    "@ai-sdk/google": "^2",
+    "@ai-sdk/openai": "^2",
+    "@ai-sdk/openai-compatible": "^1",
+    "ai": "^5",
+    "jose": "^6.0.0"
+  }
+}

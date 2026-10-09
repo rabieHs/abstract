@@ -1,0 +1,65 @@
+[
+  {
+    "id": "t01",
+    "kind": "numeric",
+    "label": "unsupported",
+    "passageRef": "s01",
+    "claim": "A transit survey identified 512 exoplanet candidates, of which 57% orbit M-dwarf stars, with a median candidate radius of 3.2 Earth radii."
+  },
+  {
+    "id": "t02",
+    "kind": "direct",
+    "label": "unsupported",
+    "passageRef": "s02",
+    "claim": "In the reported benchmark, the B-tree engine sustained higher write throughput than the log-structured engine, which in turn delivered lower point-read latency."
+  },
+  {
+    "id": "t03",
+    "kind": "hedged",
+    "label": "unsupported",
+    "passageRef": "s03",
+    "claim": "The decade-long field study proves that every photovoltaic module degrades at exactly 0.75% per year regardless of climate."
+  },
+  {
+    "id": "t04",
+    "kind": "numeric",
+    "label": "unsupported",
+    "passageRef": "s04",
+    "claim": "The bread recipe uses 350 g of flour and bakes for 45 minutes at 200°C."
+  },
+  {
+    "id": "t05",
+    "kind": "hedged",
+    "label": "unsupported",
+    "passageRef": "s05",
+    "claim": "A controlled study demonstrates conclusively that the new coffee blend is less bitter than the original."
+  },
+  {
+    "id": "t06",
+    "kind": "synthesis",
+    "label": "unsupported",
+    "passageRef": "s06",
+    "claim": "Drip irrigation doubled tomato yield per plant and cut water use by two thirds."
+  },
+  {
+    "id": "t07",
+    "kind": "mismatch",
+    "label": "unsupported",
+    "passageRef": "s06",
+    "claim": "The number 14 bus runs every 10 minutes on weekdays and every 20 minutes on weekends."
+  },
+  {
+    "id": "t08",
+    "kind": "mismatch",
+    "label": "unsupported",
+    "passageRef": "s01",
+    "claim": "In the reported benchmark, the log-structured storage engine sustained three times the write throughput of the B-tree engine."
+  },
+  {
+    "id": "t09",
+    "kind": "numeric",
+    "label": "unsupported",
+    "passageRef": "s03",
+    "claim": "Field measurements showed hot-climate modules degrading at 0.55% per year, half the temperate-site rate."
+  }
+]

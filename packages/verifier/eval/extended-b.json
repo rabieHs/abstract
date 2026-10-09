@@ -1,0 +1,218 @@
+[
+ {
+  "id": "xb1",
+  "kind": "direct",
+  "label": "supported",
+  "claim": "In the Harrowgate Allotments trial, aphid infestations were recorded on 7 of the 18 beds, concentrated near the eastern hedgerow.",
+  "passages": [
+   "In the 2025 community trial at Harrowgate Allotments, plot managers compared three tomato cultivars across 18 raised beds. 'Sungold Prime' averaged 4.2 kg of fruit per plant over the 14-week season, while 'Roma Vecchia' averaged 3.1 kg and 'Black Krim' 2.8 kg. Beds mulched with straw retained soil moisture at 22% on average, versus 15% for bare-soil beds. Aphid infestations were recorded on 7 of the 18 beds, concentrated on the eastern edge nearest the hedgerow. Trial coordinators noted that Sungold Prime plants in straw-mulched beds cropped roughly ten days earlier than the same cultivar in bare soil, though they cautioned that the trial was not randomized."
+  ]
+ },
+ {
+  "id": "xb2",
+  "kind": "hedged",
+  "label": "supported",
+  "claim": "The Millbrook observations suggest that fortnightly compost tea may reduce blackspot incidence in roses.",
+  "passages": [
+   "A two-season observation study at Millbrook Botanic Garden tracked 60 rose bushes of the cultivar 'Evening Ember' across four beds. The 30 bushes receiving fortnightly compost tea applications showed 18% fewer blackspot-affected leaves per bush at end-of-season counts than the 30 untreated bushes, and dropped foliage on average nine days later in autumn. Soil pH across all beds ranged from 6.3 to 6.6. The garden's horticulturists wrote that the results suggest compost tea may reduce blackspot incidence, but stressed that the treated beds received slightly more afternoon shade, and that unmeasured shading differences could explain part of the gap."
+  ]
+ },
+ {
+  "id": "xb3",
+  "kind": "mismatch",
+  "label": "unsupported",
+  "claim": "In the Fenwick audit, three-year-old carrot seed germinated at 48%, well below the 78% rate for one-year-old packets.",
+  "passages": [
+   "At Fenwick Seed Library's 2024 germination audit, volunteers tested 320 donated packets by sowing 20 seeds from each on damp paper at 20\u00b0C for 14 days. Carrot seed stored for three years germinated at 41%, versus 78% for one-year-old packets of the same varieties. Parsnip fell furthest, to 12% after three years, while lettuce held at 85% regardless of age. Bean and pea packets averaged 74% across all ages. The audit report recommends replacing parsnip stock annually, retiring any packet older than four years, and labelling every donation with a receipt date, a practice only 60% of donors had followed."
+  ]
+ },
+ {
+  "id": "xb4",
+  "kind": "mismatch",
+  "label": "unsupported",
+  "claim": "The Otterburn trial proved that wool-pellet barriers deter slugs in wet conditions.",
+  "passages": [
+   "Over six weeks in spring 2025, the Otterburn Gardening Circle laid wool-pellet barriers around 24 of 48 hosta clumps in members' gardens and left the other 24 unprotected. At the final inspection, barrier clumps showed a mean of 3.2 slug-damage sites per clump versus 7.9 for unprotected clumps, and 5 of the 24 protected clumps showed no damage at all. Rainfall during the period was 40% above the seasonal norm. The circle's newsletter concluded that the pattern suggests wool pellets may deter slugs in wet conditions, while noting that members did not control for clump size, variety, or garden location."
+  ]
+ },
+ {
+  "id": "xb5",
+  "kind": "synthesis",
+  "label": "supported",
+  "claim": "Greenhaven's 2025 report found that drip-irrigated tunnels used less water, lost fewer seedlings to damping-off, and required fewer weekly labour hours than sprinkler tunnels.",
+  "passages": [
+   "Greenhaven Nursery's 2025 irrigation report covered its 12 polytunnels. The seven tunnels fitted with drip lines used a mean of 310 litres of water per day, compared with 540 litres for the five tunnels still on overhead sprinklers. Seedling losses to damping-off were 4% in drip tunnels and 9% under sprinklers. Installation of drip lines cost \u00a3280 per tunnel, and the nursery estimates the water savings repaid that cost within one growing season. Staff also logged 2.5 fewer labour hours per tunnel per week after conversion, mainly from reduced hand-watering, and the report schedules the remaining five tunnels for conversion before spring 2026."
+  ]
+ },
+ {
+  "id": "xb6",
+  "kind": "numeric",
+  "label": "supported",
+  "claim": "Through 34 rounds, Calder City scored 96 goals, 14 more than second-placed Ravenshead.",
+  "passages": [
+   "Through 34 rounds of the 2025-26 Northern Futsal League season, Calder City topped the scoring charts with 96 goals, 14 more than second-placed Ravenshead. Calder's playmaker Ines Marovic recorded 21 assists, a league record, while teammate Dario Klemm scored 28 goals, second only to Ravenshead's Tomas Ferro on 31. Calder conceded 38 goals, the third-best defensive record, behind Wexley on 29 and Dunmore Port on 35. Average home attendance at Calder's arena rose from 1,850 last season to 2,340, the largest year-on-year increase in the league, and the club sold out four of its last five home fixtures."
+  ]
+ },
+ {
+  "id": "xb7",
+  "kind": "direct",
+  "label": "supported",
+  "claim": "Priya Anand won the 2026 Lakeshore Marathon women's race in 2:29:41, breaking the course record set in 2019.",
+  "passages": [
+   "The 2026 Lakeshore Marathon drew 8,412 finishers, up 6% on 2025. The women's race was won by Priya Anand in 2:29:41, breaking the course record of 2:30:55 set in 2019. The men's winner, Elias Bergqvist, finished in 2:11:08, well outside the men's record of 2:08:33. Temperatures at the 9 a.m. start were 7\u00b0C, rising to 14\u00b0C by noon, with a light tailwind on the lakefront stretch between kilometres 18 and 27. Aid stations reported distributing 96,000 cups of water, and 214 runners were treated for minor issues, mostly blisters and cramp. Organisers capped 2027 entries at 9,000."
+  ]
+ },
+ {
+  "id": "xb8",
+  "kind": "mismatch",
+  "label": "unsupported",
+  "claim": "In the final, Kestrel Bay committed 17 turnovers to Port Solace's 12.",
+  "passages": [
+   "In the 2025 Meridian Basketball Cup final, Port Solace beat Kestrel Bay 88-81. Port Solace's guard Amara Diallo led all scorers with 27 points and added 6 assists, while Kestrel Bay's centre Ruth Okafor posted 22 points and a game-high 15 rebounds. Port Solace shot 46% from the field versus 41% for Kestrel Bay, but committed more turnovers, 17 to 12. Attendance was 11,240, a tournament final record. Kestrel Bay led 44-40 at half-time before Port Solace outscored them 27-16 in the third quarter, a stretch in which Diallo scored 13 consecutive points for her side."
+  ]
+ },
+ {
+  "id": "xb9",
+  "kind": "mismatch",
+  "label": "unsupported",
+  "claim": "Sofia Keller's overall lead over Marta Voss shrank from 1 minute 8 seconds to 41 seconds after Stage 11.",
+  "passages": [
+   "Stage 11 of the 2025 Vuelta del Norte covered 178 km from Arano to the summit finish at Puerto Lindo, climbing 4,350 m in total. Breakaway rider Joan Miret held a maximum lead of 5 minutes 20 seconds before being caught 14 km from the line. Race leader Sofia Keller finished third on the stage, extending her overall advantage over Marta Voss from 41 seconds to 1 minute 8 seconds. Stage winner Lucio Fabbri averaged 36.2 km/h, the slowest winning average of the race so far given the climbing. Eleven riders abandoned during the stage, most citing the 39\u00b0C afternoon heat."
+  ]
+ },
+ {
+  "id": "xb10",
+  "kind": "mismatch",
+  "label": "unsupported",
+  "claim": "At the Tidewater Invitational, Grieg's freestyle anchor split was the fastest in the field.",
+  "passages": [
+   "At the 2025 Tidewater Invitational, the host club's relay team of Nakamura, Ellis, Fontaine and Grieg won the 4x100 m medley in 3:36.44, finishing 0.8 seconds ahead of Harbour View. Nakamura's opening backstroke split of 53.90 was the fastest in the field. In individual events, Ellis took the 200 m breaststroke in 2:09.12, and Fontaine finished second in the 100 m butterfly, 0.31 seconds behind Harbour View's Lena Adeyemi. The meet was the first held in the venue's new eight-lane pool, and officials reported that 14 of the 62 contested events produced new meet records over the three days."
+  ]
+ },
+ {
+  "id": "xb11",
+  "kind": "numeric",
+  "label": "supported",
+  "claim": "Annealing the 0.2 mm samples raised mean flexural strength from 61 MPa to 68 MPa while strain at failure fell from 5.1% to 3.4%.",
+  "passages": [
+   "In bend testing at the Averill Materials Lab, 30 samples of a recycled-PET filament printed at 0.2 mm layer height showed a mean flexural strength of 61 MPa, with a standard deviation of 4.5 MPa. A comparison batch printed at 0.3 mm layer height averaged 54 MPa. Annealing the 0.2 mm samples at 90\u00b0C for two hours raised mean flexural strength to 68 MPa but increased brittleness, with strain at failure dropping from 5.1% to 3.4%. All tests followed a three-point bend protocol with a 64 mm support span and a 5 mm/min crosshead speed, and samples were conditioned at 50% humidity for 48 hours beforehand."
+  ]
+ },
+ {
+  "id": "xb12",
+  "kind": "hedged",
+  "label": "supported",
+  "claim": "The Corren report suggests alloy A6-T may offer better marine corrosion resistance than A2-R.",
+  "passages": [
+   "A 2025 report from the Corren Institute examined salt-spray corrosion on coupons of two aluminium alloys marketed for boat fittings. After 500 hours of continuous exposure at 35\u00b0C, alloy A6-T coupons showed pitting across 8% of surface area on average, versus 19% for alloy A2-R. Maximum pit depth was 0.11 mm for A6-T and 0.24 mm for A2-R. The report noted the small sample of 12 coupons per alloy and a single spray chamber, and stated that the results suggest A6-T may offer better marine corrosion resistance, pending longer exposures of 1,500 hours planned for 2026."
+  ]
+ },
+ {
+  "id": "xb13",
+  "kind": "synthesis",
+  "label": "supported",
+  "claim": "In Kestwick's tests, the Pico X4 case survived all face-down drops without screen cracks, allowed cracks in two of ten corner-first drops, and was lighter than the ArmorShell 2.",
+  "passages": [
+   "Drop-testing at the Kestwick consumer lab subjected 20 units of the Pico X4 phone case to 1.5 m falls onto concrete, 10 face-down and 10 corner-first. No screens cracked in the face-down drops; two of the ten corner-first drops cracked the test phone's screen corner. The case added 34 g and 3.1 mm of thickness to the handset. In the lab's twist test, the case deformed at 18 N\u00b7m without permanent damage. A rival case, the ArmorShell 2, allowed one crack in ten face-down drops under the same protocol and weighed 51 g, though it survived all ten of its corner-first drops."
+  ]
+ },
+ {
+  "id": "xb14",
+  "kind": "mismatch",
+  "label": "unsupported",
+  "claim": "Brayford's tests showed that all bamboo dowels withstood higher loads than the oak samples.",
+  "passages": [
+   "Tensile tests at Brayford Polytechnic compared bamboo and oak dowels of 12 mm diameter, 25 samples of each. Oak failed at a mean load of 8.4 kN, bamboo at 9.1 kN, though bamboo showed far higher variability, with a standard deviation of 1.4 kN against oak's 0.6 kN. Of the 25 bamboo dowels, 6 failed below the weakest oak result of 7.1 kN. Moisture content was conditioned to 10% for all samples before testing. The researchers concluded that bamboo outperformed oak on average in this batch, but that a meaningful minority of bamboo dowels underperformed every oak sample tested."
+  ]
+ },
+ {
+  "id": "xb15",
+  "kind": "mismatch",
+  "label": "unsupported",
+  "claim": "Stainless pivots with dry PTFE lubrication reached a median of 256,000 cycles on the Halden rig.",
+  "passages": [
+   "The Halden test rig cycled 16 prototype cabinet-hinge assemblies to failure at 2 Hz with the ambient temperature held at 23\u00b0C. Unlubricated stainless pivots lasted a median of 210,000 cycles; brass bushings managed 140,000. When lubricated with dry PTFE spray, the stainless median rose to 265,000 cycles. Two stainless units exceeded 400,000 cycles without failing and were withdrawn from the test for inspection. The dominant failure mode, observed in 11 of the 14 failed units, was pin ovalisation rather than fracture, which the engineers attribute to the 40 N side-load applied on each cycle to simulate a heavy door."
+  ]
+ },
+ {
+  "id": "xb16",
+  "kind": "direct",
+  "label": "supported",
+  "claim": "October 2025 was Marlow Vale's wettest October on record with 214 mm, surpassing the 198 mm of October 1987.",
+  "passages": [
+   "The Marlow Vale weather station logged its wettest October on record in 2025, with 214 mm of rain, beating the 198 mm of October 1987. Fifteen of the month's 31 days recorded measurable rain, and the single-day maximum, 46 mm on 12 October, was the third-highest daily total since records began in 1912. Mean temperature for the month was 11.3\u00b0C, 0.8\u00b0C above the 1991-2020 average. Wind gusts peaked at 74 km/h on 29 October during Storm Petra, which also brought the month's only recorded hail. The station's rain gauge was independently verified against a manual gauge twice during the month."
+  ]
+ },
+ {
+  "id": "xb17",
+  "kind": "synthesis",
+  "label": "supported",
+  "claim": "Dune Point records show annual fog days fell from a mean of 42 in 1965-1974 to 27 in 2015-2024, with summer fog declining most steeply.",
+  "passages": [
+   "Analysis of 60 years of records from the Dune Point lighthouse station shows annual fog days declining from a mean of 42 in the 1965-1974 decade to 27 in 2015-2024. Over the same span, mean sea-surface temperature at the nearby buoy rose 1.1\u00b0C. The station's anemometer, replaced in 1998, recorded a slight increase in mean wind speed, from 19 to 21 km/h, though the authors caution that the instrument change complicates that comparison. Summer fog declined most steeply, with July averaging 3.1 fog days in the recent decade versus 7.4 in the earliest one, while winter fog frequency barely changed."
+  ]
+ },
+ {
+  "id": "xb18",
+  "kind": "mismatch",
+  "label": "unsupported",
+  "claim": "Ashvale's 39.4\u00b0C reading on 19 July 2025 broke the previous record of 37.8\u00b0C set in August 2003.",
+  "passages": [
+   "On 19 July 2025, Ashvale recorded 39.4\u00b0C, its highest temperature since records began in 1931, exceeding the previous mark of 38.7\u00b0C set on 3 August 2003. The heatwave lasted six days, with nighttime minima above 20\u00b0C on four consecutive nights, a first for the station. The town's reservoir fell to 61% capacity by the end of the month, prompting a hosepipe advisory that remained in force for five weeks. August then brought a sharp reversal, with 340% of normal rainfall making it the wettest August at Ashvale since 1956 and refilling the reservoir to 84% by early September."
+  ]
+ },
+ {
+  "id": "xb19",
+  "kind": "mismatch",
+  "label": "unsupported",
+  "claim": "Pinecrest Pass finished the 2024-25 season above its 30-year snowfall normal, while Bear Hollow came in below its normal.",
+  "passages": [
+   "The 2024-25 snow season at Pinecrest Pass totalled 612 cm, 9% below the 30-year normal of 673 cm, while the neighbouring Bear Hollow station, 300 m lower in elevation, totalled 488 cm, 4% above its own normal. December alone delivered 41% of Pinecrest's seasonal total, the most front-loaded season in the record. The pass road closed 17 times for weather, compared with 23 closures the previous season, and avalanche control teams used 96 explosive charges, the fewest since 2016-17. Snowpack at the 1 April survey held 88% of normal water content at Pinecrest and 102% at Bear Hollow."
+  ]
+ },
+ {
+  "id": "xb20",
+  "kind": "mismatch",
+  "label": "unsupported",
+  "claim": "Grelling's summary reported 1,904 sunshine hours in 2025 and noted that the dry spring set a new March-May rainfall record.",
+  "passages": [
+   "The Grelling Observatory's 2025 annual summary reported 1,904 sunshine hours, the fourth-highest total in its 88-year series. Spring was exceptionally dry, with March-May rainfall of 74 mm against a normal of 158 mm, though the season fell short of the driest spring on record, 61 mm in 1976. Two tornadoes were confirmed in the county in June, both rated EF0, damaging fences and a barn roof near Copsey. The year's lowest temperature, -14.2\u00b0C on 8 January, was the coldest reading since 2010. No month in 2025 set an all-time monthly rainfall record at the station."
+  ]
+ },
+ {
+  "id": "xb21",
+  "kind": "numeric",
+  "label": "supported",
+  "claim": "Weston's e-book loans rose 11% to 158,700 in 2025 while physical checkouts fell 3% to 486,200.",
+  "passages": [
+   "Weston Public Library's 2025 annual report counted 486,200 physical checkouts, down 3% from 2024, while e-book loans rose 11% to 158,700. The library added 4,120 new cardholders during the year, bringing active membership to 38,450. Programme attendance totalled 26,900 across 1,140 events, with children's storytime accounting for 41% of all attendance. The most-borrowed adult title circulated 312 times across the system's 22 copies. Late-fee income fell to \u00a38,400 after fines were abolished for under-18s in March, and the report projects full fine abolition would cost roughly \u00a315,000 a year against the current budget of \u00a32.1 million."
+  ]
+ },
+ {
+  "id": "xb22",
+  "kind": "hedged",
+  "label": "supported",
+  "claim": "The Carden evaluation suggests the extended Saturday hours may be driving the pilot branches' extra visits.",
+  "passages": [
+   "A pilot at three branches of the Carden Library Network extended Saturday closing from 5 p.m. to 8 p.m. between January and June 2025. Saturday visits at the pilot branches rose 14% year on year over the period, compared with a 2% rise at the network's nine other branches. Study-room bookings after 5 p.m. averaged 71% occupancy, and Saturday circulation at the pilot branches grew 9%. The evaluation team wrote that the figures suggest the extended hours may be driving the extra visits, though it cautioned that a nearby college's spring exam schedule could have contributed, and recommended a second six-month phase."
+  ]
+ },
+ {
+  "id": "xb23",
+  "kind": "mismatch",
+  "label": "unsupported",
+  "claim": "Tallis County borrowed 11,020 items from other systems in 2025 and lent out 9,340.",
+  "passages": [
+   "Interlibrary loan data for the Tallis County library system in 2025 shows 9,340 items borrowed from other systems and 11,020 items lent out, making the county a net lender for the sixth consecutive year. Turnaround for incoming requests averaged 6.2 days, an improvement on 7.5 days in 2024, which staff attribute to the new courier contract signed in February. The music score collection generated the highest per-item demand from outside systems, at 4.4 loans per item, ahead of local history at 3.1. Requests went unfulfilled in 6% of cases, chiefly involving out-of-print titles with no lending copy available."
+  ]
+ },
+ {
+  "id": "xb24",
+  "kind": "mismatch",
+  "label": "unsupported",
+  "claim": "The Ostergard survey found that all 42 rural branches hosted weekly children's programmes.",
+  "passages": [
+   "A 2025 survey of 42 rural branches in the Ostergard region found that 28 offered wireless printing, 35 hosted weekly children's programmes, and 19 provided seed libraries. Median weekly opening hours were 31, with six branches open fewer than 20 hours a week. Circulation per capita across the branches ranged from 2.1 to 9.8. Branches with seed libraries reported 12% higher spring foot traffic on average than those without, though the survey authors noted this group also skewed toward larger towns with more passing trade. Twelve branches reported relying entirely on volunteer staff for weekend opening."
+  ]
+ }
+]
