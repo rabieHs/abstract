@@ -1,5 +1,9 @@
 # abstract
 
+[![npm](https://img.shields.io/npm/v/abstract-cli?label=npm&color=111)](https://www.npmjs.com/package/abstract-cli)
+[![license](https://img.shields.io/npm/l/abstract-cli?color=111)](LICENSE)
+[![runtime: Bun](https://img.shields.io/badge/runtime-Bun-111)](https://bun.sh)
+
 **An AI research workbench that won't write a citation it can't trace to a real source.**
 
 abstract is a local, chat-first research assistant. Point it at a folder of papers and ask for
