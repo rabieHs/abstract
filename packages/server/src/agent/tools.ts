@@ -16,6 +16,7 @@ import {
 } from "./ledger.ts"
 import { mkdirSync, writeFileSync } from "node:fs"
 import { draftSection, narrationLintRuns } from "./draft.ts"
+import { statEntry } from "../tree.ts"
 import { checkDoi, exportDraft } from "./export.ts"
 import { blockedTasks, droppedTasks, getPlan, renderPlanLines, setPlan, startableTasks, type Todo } from "./plan.ts"
 import { centralConcepts, extractGraph, graphSize, neighbors, sharedConcepts } from "./graph.ts"
@@ -41,11 +42,18 @@ export function listSourceFiles(workspace: Workspace): { path: string; size: num
 
 function walk(dir: string, root: string, out: { path: string; size: number }[]): void {
   if (out.length >= MAX_FILES) return
-  for (const entry of readdirSync(dir)) {
+  let entries: string[]
+  try {
+    entries = readdirSync(dir)
+  } catch {
+    return // unreadable folder: skip it
+  }
+  for (const entry of entries) {
     if (out.length >= MAX_FILES) return
     if (entry.startsWith(".") || IGNORED_DIRS.has(entry)) continue
     const full = join(dir, entry)
-    const stat = statSync(full)
+    const stat = statEntry(full) // broken links skipped; linked folders not followed
+    if (!stat) continue
     if (stat.isDirectory()) walk(full, root, out)
     else if (SOURCE_EXTS.has(extname(entry).toLowerCase())) {
       out.push({ path: relative(root, full), size: stat.size })

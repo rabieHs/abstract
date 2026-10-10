@@ -1,6 +1,6 @@
 {
   "name": "abstract-cli",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "An AI research workbench that won't write a citation it can't trace to a real source — local-first, runs on your ChatGPT plan or your own API keys.",
   "license": "Apache-2.0",
   "keywords": [

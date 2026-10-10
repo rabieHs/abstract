@@ -12,7 +12,7 @@ import {
   type UIMessage,
 } from "ai"
 import {
-  addNote, deleteNote, listNotes, loadConfig, openDb, openWorkspace,
+  addNote, deleteNote, isUnsafeWorkspace, listNotes, loadConfig, openDb, openWorkspace,
   recallForPrompt, saveConfig, setApproved,
   type MemoryKind, type Workspace,
 } from "@abstract/core"
@@ -196,6 +196,12 @@ export function createApp(options: ServerOptions) {
     if (!path) return c.json({ error: "path required" }, 400)
     if (!existsSync(path) || !statSync(path).isDirectory()) {
       return c.json({ error: `not a directory: ${path}` }, 400)
+    }
+    if (isUnsafeWorkspace(path)) {
+      return c.json(
+        { error: "that's your home folder (or contains it), so abstract won't scan all of it. Pick a project folder." },
+        400,
+      )
     }
     const next = openWorkspace(path)
     const nextDb = openDb(next.dbPath)

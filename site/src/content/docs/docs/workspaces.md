@@ -19,7 +19,11 @@ On the **Workspaces** screen you can:
   contain an `.openpaper/` folder (created the first time a folder is opened as a workspace), and
   never your home folder or the workspace that's open.
 
-Running `abstract` with no folder reopens the last workspace you used.
+Running `abstract` with no folder reopens the last workspace you used, or creates
+`~/Abstract/default` the first time.
+
+abstract never uses your home folder (or the disk root) as a workspace, because it would scan
+everything on your computer. If you ask for it, abstract opens `~/Abstract/default` instead.
 
 ## What's in a workspace
 

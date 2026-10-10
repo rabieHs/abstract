@@ -1,7 +1,7 @@
 #!/usr/bin/env bun
-import { existsSync } from "node:fs"
+import { existsSync, mkdirSync } from "node:fs"
 import { join, resolve } from "node:path"
-import { GLOBAL_DIR, loadConfig, migrateLegacyGlobalDir } from "@abstract/core"
+import { DEFAULT_WORKSPACE, GLOBAL_DIR, isUnsafeWorkspace, loadConfig, migrateLegacyGlobalDir } from "@abstract/core"
 import { createApp } from "@abstract/server"
 import pkg from "../package.json"
 
@@ -9,7 +9,7 @@ const HELP = `abstract — the AI research workbench with verified citations
 
 usage:
   abstract [dir]          open a workspace (default: the last one you opened,
-                          else the current directory)
+                          else ~/Abstract/default)
   abstract --port <n>     serve on a specific port
   abstract --no-open      don't open the browser
   abstract --version      print the version
@@ -50,10 +50,17 @@ for (let i = 0; i < args.length; i++) {
 
 // web UI location — standalone build: unpacked to ABSTRACT_WEB_DIR by standalone.ts;
 // npm bundle: dist/index.js + dist/web ; repo: apps/cli/src + apps/web/dist
-// no explicit dir → reopen the last-used workspace (fall back to cwd)
+// no folder given: reopen the last workspace, else a dedicated default one.
+// Never the terminal's current folder: run from ~ that turned the whole home
+// folder into a workspace and the file scanner walked the entire disk.
 if (!dir) {
-  dir = loadConfig().recentWorkspaces.find((r) => existsSync(r)) ?? process.cwd()
+  dir = loadConfig().recentWorkspaces.find((r) => existsSync(r) && !isUnsafeWorkspace(r)) ?? DEFAULT_WORKSPACE
+} else if (isUnsafeWorkspace(dir)) {
+  console.log(`\n  ${resolve(dir)} is your home folder (or contains it), so abstract won't scan all of it.`)
+  console.log(`  Opening ${DEFAULT_WORKSPACE} instead. To work in another folder: abstract ~/my-project`)
+  dir = DEFAULT_WORKSPACE
 }
+if (dir === DEFAULT_WORKSPACE) mkdirSync(dir, { recursive: true })
 
 const staticDir = [
   process.env["ABSTRACT_WEB_DIR"],

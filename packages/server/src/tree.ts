@@ -1,4 +1,4 @@
-import { existsSync, mkdirSync, readdirSync, renameSync, rmSync, statSync } from "node:fs"
+import { existsSync, lstatSync, mkdirSync, readdirSync, renameSync, rmSync, statSync, type Stats } from "node:fs"
 import { basename, dirname, join } from "node:path"
 import type { Database, Workspace } from "@abstract/core"
 
@@ -14,10 +14,32 @@ export interface TreeNode {
 
 const IGNORED = new Set([".openpaper", ".git", "node_modules", "__pycache__", ".DS_Store"])
 
+/**
+ * stat an entry for listing, or null to skip it. Broken links and unreadable
+ * entries are skipped instead of throwing (observed: a dangling app symlink
+ * failed every panel refresh), and linked FOLDERS are not descended into, so
+ * a link can't lead the scan outside the workspace or around in a loop.
+ */
+export function statEntry(full: string): Stats | null {
+  try {
+    const link = lstatSync(full)
+    if (!link.isSymbolicLink()) return link
+    const target = statSync(full)
+    return target.isDirectory() ? null : target
+  } catch {
+    return null
+  }
+}
+
 function walkDir(abs: string, rel: string, depth: number): TreeNode[] {
   if (depth > 6) return []
   const out: TreeNode[] = []
-  const entries = readdirSync(abs).sort()
+  let entries: string[]
+  try {
+    entries = readdirSync(abs).sort()
+  } catch {
+    return [] // unreadable folder (permissions): show it empty rather than fail the panel
+  }
   // inside drafts/, the ONLY user-facing artifact is the markdown. The verdict
   // .json, the export .bib/.tex, and the .audit.json all still exist on disk
   // (the agent and export use them) but are hidden from the file panel so one
@@ -28,7 +50,8 @@ function walkDir(abs: string, rel: string, depth: number): TreeNode[] {
     if (inDrafts && !entry.endsWith(".md") && !entry.endsWith(".markdown")) continue
     const full = join(abs, entry)
     const relPath = rel ? `${rel}/${entry}` : entry
-    const st = statSync(full)
+    const st = statEntry(full)
+    if (!st) continue
     if (st.isDirectory()) {
       out.push({ name: entry, path: relPath, kind: "folder", children: walkDir(full, relPath, depth + 1) })
     } else {

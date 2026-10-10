@@ -4,6 +4,21 @@ All notable changes to abstract are recorded here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and versions follow
 [Semantic Versioning](https://semver.org/).
 
+## [0.2.1] - 2026-10-10
+
+### Changed
+
+- `abstract` with no folder now opens `~/Abstract/default` the first time, instead of the folder
+  the terminal happens to be in. It still reopens your last workspace when there is one.
+- abstract never uses your home folder or the disk root as a workspace, from the command line or
+  the Workspaces screen, because scanning them walks your whole computer.
+
+### Fixed
+
+- The file panel and the agent's file list no longer fail on broken links (seen with a stray
+  application link); they skip anything they can't read, and don't follow links into other
+  folders.
+
 ## [0.2.0] - 2026-10-10
 
 ### Added

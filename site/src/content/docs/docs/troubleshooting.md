@@ -24,6 +24,10 @@ The standalone build needs a glibc Linux (Ubuntu, Debian, Fedora, Arch…). On A
 You installed the npm package, which runs on Bun. Use the [installer](/docs/install/) instead
 (it needs nothing else), or [install Bun](https://bun.sh).
 
+**abstract opened `~/Abstract/default` instead of the folder I gave it**
+The folder was your home folder (or contained it). abstract won't scan your whole computer, so it
+uses `~/Abstract/default` instead. Give it a project folder: `abstract ~/my-project`.
+
 **`port 4477 is in use`**
 That's fine: abstract picked the next free port; use the address it prints. To choose one
 yourself: `abstract --port 5000`.

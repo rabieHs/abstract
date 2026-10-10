@@ -1,5 +1,5 @@
 export { loadConfig, saveConfig, migrateLegacyGlobalDir, GLOBAL_DIR, Config } from "./config.ts"
-export { openWorkspace, type Workspace } from "./workspace.ts"
+export { openWorkspace, DEFAULT_WORKSPACE, isUnsafeWorkspace, type Workspace } from "./workspace.ts"
 export { openDb, type Database } from "./db.ts"
 export {
   addNote, listNotes, setApproved, deleteNote, memoryPressure, recallForPrompt,
