@@ -1,0 +1,103 @@
+---
+// Install command with Shell / npm / Bun tabs. Every instance on the page stays
+// in sync, and the last choice is remembered (per visitor, in this browser).
+const options = [
+  {
+    id: "shell",
+    label: "Shell",
+    cmd: "curl -fsSL https://useabstract.co/install.sh | sh",
+    note: "macOS and Linux. Nothing else to install.",
+  },
+  {
+    id: "npm",
+    label: "npm",
+    cmd: "npm i -g abstract-cli",
+    note: "Runs on Bun, so install <a href=\"https://bun.sh\">Bun</a> first.",
+  },
+  {
+    id: "bun",
+    label: "Bun",
+    cmd: "bun install -g abstract-cli",
+    note: "Needs <a href=\"https://bun.sh\">Bun</a> 1.1 or newer.",
+  },
+]
+const first = options[0]!
+---
+
+<div class="it" data-install>
+  <div class="it-tabs" role="tablist" aria-label="Install with">
+    {
+      options.map((o, i) => (
+        <button
+          type="button"
+          role="tab"
+          class="it-tab"
+          data-tab={o.id}
+          data-cmd={o.cmd}
+          data-note={o.note}
+          aria-selected={i === 0 ? "true" : "false"}
+        >
+          {o.label}
+        </button>
+      ))
+    }
+  </div>
+  <div class="it-box">
+    <span class="it-cmd"><span class="it-p">$</span><span data-cmd-text>{first.cmd}</span></span>
+    <button type="button" class="it-copy" data-copy={first.cmd}>copy</button>
+  </div>
+  <p class="it-note" data-note-text set:html={first.note} />
+</div>
+
+<style>
+  .it { max-width: 600px; margin: 26px auto 0; text-align: left; }
+  .it-tabs { display: flex; gap: 0; border-bottom: 1px solid var(--line); }
+  .it-tab {
+    font-family: var(--mono); font-size: 12px; letter-spacing: 0.06em;
+    background: transparent; color: var(--muted); border: 0; border-bottom: 2px solid transparent;
+    padding: 8px 14px; cursor: pointer; margin-bottom: -1px;
+  }
+  .it-tab:hover { color: var(--ink); }
+  .it-tab[aria-selected="true"] { color: var(--ink); border-bottom-color: var(--ink); }
+  .it-box {
+    display: flex; align-items: center; justify-content: space-between; gap: 12px;
+    background: var(--code-bg); color: var(--code-ink);
+    font-family: var(--mono); font-size: 14px; padding: 12px 14px 12px 18px;
+  }
+  .it-cmd { overflow-x: auto; white-space: nowrap; scrollbar-width: none; }
+  .it-cmd::-webkit-scrollbar { display: none; }
+  .it-p { opacity: 0.5; margin-right: 8px; }
+  .it-copy {
+    flex: none; font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;
+    background: transparent; color: var(--code-ink);
+    border: 1px solid color-mix(in srgb, var(--code-ink) 30%, transparent); padding: 4px 9px; cursor: pointer;
+  }
+  .it-copy:hover { border-color: var(--code-ink); }
+  .it-note { margin-top: 10px; font-size: 13px; color: var(--muted); text-align: center; }
+  .it-note :global(a) { color: var(--accent); }
+</style>
+
+<script is:inline>
+  ;(() => {
+    if (window.__installTabs) return
+    window.__installTabs = true
+    const select = (id, save) => {
+      document.querySelectorAll("[data-install]").forEach((box) => {
+        const tab = box.querySelector(`[data-tab="${id}"]`)
+        if (!tab) return
+        box.querySelectorAll("[data-tab]").forEach((t) => t.setAttribute("aria-selected", t === tab ? "true" : "false"))
+        box.querySelector("[data-cmd-text]").textContent = tab.dataset.cmd
+        box.querySelector("[data-copy]").setAttribute("data-copy", tab.dataset.cmd)
+        box.querySelector("[data-note-text]").innerHTML = tab.dataset.note
+      })
+      if (save) try { localStorage.setItem("abstract.install", id) } catch {}
+    }
+    document.addEventListener("click", (e) => {
+      const t = e.target instanceof Element ? e.target.closest("[data-tab]") : null
+      if (t && t.closest("[data-install]")) select(t.dataset.tab, true)
+    })
+    let saved = null
+    try { saved = localStorage.getItem("abstract.install") } catch {}
+    if (saved) select(saved, false)
+  })()
+</script>

@@ -2,7 +2,7 @@
 import { defineConfig } from "astro/config"
 import starlight from "@astrojs/starlight"
 
-// useabstract.co — the landing page lives in src/pages/index.astro; the docs
+// useabstract.co: the landing page lives in src/pages/index.astro; the docs
 // are Starlight pages under src/content/docs/docs/ (served at /docs/...).
 export default defineConfig({
   site: "https://useabstract.co",
@@ -10,7 +10,7 @@ export default defineConfig({
     starlight({
       title: "abstract docs",
       description:
-        "Documentation for abstract — the local AI research workbench that won't write a citation it can't trace to a real source.",
+        "Documentation for abstract, the local AI research workbench that won't write a citation it can't trace to a real source.",
       logo: {
         light: "./src/assets/logo-light.png",
         dark: "./src/assets/logo-dark.png",

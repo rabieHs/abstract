@@ -27,7 +27,7 @@ abstract --version      print the version
 ```
 
 abstract serves the app on your own computer only (`127.0.0.1`) and opens your browser at that
-address. If the port is busy it tries the next one — `port 4477 is in use — trying 4478` — up to
+address. If the port is busy, it tries the next one (printing `port 4477 is in use`), up to
 20 ports, and stops with `no free port found` if none is free.
 
 Stop it with <kbd>Ctrl</kbd>+<kbd>C</kbd>. Work in progress is saved before it exits.
@@ -40,5 +40,5 @@ abstract ~/thesis             # open a specific folder
 abstract ~/thesis --port 5000 --no-open
 ```
 
-You can run two workspaces at once in separate terminals — the second one takes the next free
+You can run two workspaces at once in separate terminals; the second one takes the next free
 port.

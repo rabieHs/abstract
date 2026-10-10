@@ -1,13 +1,13 @@
 ---
 title: Install
-description: Install abstract on macOS or Linux with one command — nothing else needed.
+description: Install abstract on macOS or Linux with one command. Nothing else needed.
 ---
 
 import { Steps, Tabs, TabItem } from "@astrojs/starlight/components"
 
 abstract runs on **macOS** (Apple Silicon and Intel) and **Linux** (x64 and arm64).
 
-## The easy way — one command
+## The easy way: one command
 
 <Steps>
 
@@ -20,7 +20,7 @@ abstract runs on **macOS** (Apple Silicon and Intel) and **Linux** (x64 and arm6
    curl -fsSL https://useabstract.co/install.sh | sh
    ```
 
-   It downloads abstract for your computer, checks it, and installs it. Nothing else is needed —
+   It downloads abstract for your computer, checks it, and installs it. Nothing else is needed:
    no Bun, no Node, no admin password.
 
 3. **Open a new terminal window** (so it finds the new command), then check it works:
@@ -37,7 +37,7 @@ Next: the [quick start](/docs/quick-start/) takes you from an empty folder to a 
 
 - Detects your system and downloads the matching file from
   [GitHub Releases](https://github.com/rabieHs/abstract/releases).
-- **Verifies its SHA-256 checksum** against the published `SHA256SUMS` — if they don't match, it
+- **Verifies its SHA-256 checksum** against the published `SHA256SUMS`. If they don't match, it
   stops and installs nothing.
 - Puts the `abstract` command in `~/.local/bin`, and adds that folder to your `PATH` in your shell's
   startup file (`~/.zshrc`, `~/.bashrc`, …) if it isn't there already.
@@ -55,7 +55,7 @@ curl -fsSL https://useabstract.co/install.sh | ABSTRACT_INSTALL_DIR=~/bin ABSTRA
 ### Where the files come from
 
 Every release is built by [GitHub Actions](https://github.com/rabieHs/abstract/actions) from the
-public source code, on GitHub's own machines — not on anyone's laptop. Each file comes with a
+public source code, on GitHub's own machines, not on anyone's laptop. Each file comes with a
 **build-provenance attestation**, and you can verify it with the
 [GitHub CLI](https://cli.github.com/):
 
@@ -63,7 +63,7 @@ public source code, on GitHub's own machines — not on anyone's laptop. Each fi
 gh attestation verify abstract-darwin-arm64.tar.gz --repo rabieHs/abstract
 ```
 
-## For developers — npm or Bun
+## For developers: npm or Bun
 
 If you already use [Bun](https://bun.sh) (1.1 or newer), you can install the package instead. This
 version runs on your Bun:
@@ -83,7 +83,7 @@ version runs on your Bun:
 
 ## Update
 
-Run the installer again — it replaces the old version and keeps your settings and workspaces:
+Run the installer again. It replaces the old version and keeps your settings and workspaces:
 
 ```bash
 curl -fsSL https://useabstract.co/install.sh | sh

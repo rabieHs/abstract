@@ -29,25 +29,25 @@ delete `~/.abstract`.
   tables), scanned PDFs (for OCR), files the agent looks at as a whole when you ask about them,
   and page images it renders to view figures.
 
-**To scholarly services** — search queries, DOI lookups, and open-access lookups:
+**To scholarly services:** search queries, DOI lookups, and open-access lookups go to
 OpenAlex, Crossref, arXiv, Unpaywall (with the email in `UNPAYWALL_EMAIL`), and doi.org.
 
-**To publishers and repositories** — when the agent downloads an open-access PDF.
+**To publishers and repositories:** when the agent downloads an open-access PDF.
 
-**To OpenAI's sign-in service** — only if you use Continue with ChatGPT.
+**To OpenAI's sign-in service:** only if you use Continue with ChatGPT.
 
-**To GitHub** — only when you install or update: the installer downloads the program and its
+**To GitHub:** only when you install or update. The installer downloads the program and its
 checksums from GitHub Releases. The app itself doesn't check for updates or send usage data.
 
 ## Keeping document content local
 
-Use [Ollama](/docs/models/#a-local-model-with-ollama) as your only provider. Model requests —
-including whole files — then stay on your machine. Literature search and DOI checks still contact
+Use [Ollama](/docs/models/#a-local-model-with-ollama) as your only provider. Model requests,
+including whole files, then stay on your machine. Literature search and DOI checks still contact
 the scholarly services above when the agent uses them.
 
 ## Analysis scripts
 
 When the agent runs Python on your data, the script runs in your workspace folder with a minimal
 environment: **none of your API keys** are passed to it, and it has time and output limits.
-Scripts aren't meant to make network calls, but that isn't technically blocked — review what you
+Scripts aren't meant to make network calls, but that isn't technically blocked, so review what you
 ask it to run.

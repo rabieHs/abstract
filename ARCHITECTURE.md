@@ -76,7 +76,7 @@ The orchestrator is a single conversational loop, like a coding agent's. Depth e
 |---|---|
 | "what does entailment mean in NLI?" | Answers directly. No retrieval, no gates. |
 | "which of my papers measure energy per inference?" | `search_library` → passage-pinned answer. |
-| "find recent work on frugal AI benchmarks" | `search_scholar` live → screening table in chat. |
+| "find recent work on graph neural networks for molecules" | `search_scholar` live → screening table in chat. |
 | "write the related work for my ICTAI paper" | Proposes a plan in chat; unfolds checkpoints as questions. |
 
 Checkpoints (`request_approval`) pause the run and persist state; they are in-chat questions

@@ -4,12 +4,12 @@ All notable changes to abstract are recorded here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and versions follow
 [Semantic Versioning](https://semver.org/).
 
-## [0.2.0] — 2026-10-10
+## [0.2.0] - 2026-10-10
 
 ### Added
 
 - **Standalone builds** for macOS (Apple Silicon and Intel) and Linux (x64 and arm64): one file
-  with everything inside — no Bun or Node needed.
+  with everything inside. No Bun or Node needed.
 - **One-line installer:** `curl -fsSL https://useabstract.co/install.sh | sh` downloads the build
   for your system, verifies its SHA-256 checksum, and installs it to `~/.local/bin`.
 - Releases are built by GitHub Actions from the tagged source, with checksums and
@@ -21,7 +21,7 @@ All notable changes to abstract are recorded here. The format follows
 
 - The app's health check reports its real version.
 
-## [0.1.1] — 2026-10-10
+## [0.1.1] - 2026-10-10
 
 ### Added
 
@@ -40,13 +40,13 @@ All notable changes to abstract are recorded here. The format follows
   leaves your machine.
 - The Workspaces screen now says your files are *stored* on this machine.
 
-## [0.1.0] — 2026-10-09
+## [0.1.0] - 2026-10-09
 
 The first open-source release.
 
 ### Added
 
-- **Continue with ChatGPT** — run abstract on a ChatGPT Plus or Pro plan through OpenAI's Sign in
+- **Continue with ChatGPT:** run abstract on a ChatGPT Plus or Pro plan through OpenAI's Sign in
   with ChatGPT, with no API key. Includes the usage link, a first-use notice, a "Using ChatGPT plan"
   label in the chat, and a clear message when the plan's usage limit is reached.
 - One model, picked in the chat box, runs every task. Models come from Anthropic, OpenAI, Google,

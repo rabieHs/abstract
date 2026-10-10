@@ -3,7 +3,7 @@ title: Configuration
 description: Settings files, budgets, environment variables, and rules.
 ---
 
-Most people never edit a file — **Settings** in the app covers models and keys. This page is for
+Most people never edit a file: **Settings** in the app covers models and keys. This page is for
 everything else.
 
 ## Where things live
@@ -49,7 +49,7 @@ The standalone program also unpacks its interface once per version into your cac
 | `roles.embeddings` | Optional: force an embedding model, e.g. `"openai/text-embedding-3-small"`. |
 | `port` | Default port (4477). |
 | `recentWorkspaces` | Shown on the Workspaces screen; the first existing one opens by default. |
-| `budgets` | Limits for long runs — see below. |
+| `budgets` | Limits for long runs (see below). |
 
 If the file can't be read, abstract starts with defaults and prints a warning.
 
@@ -62,7 +62,7 @@ off.
 |---|---|---|
 | `turnSoftInputTokens` | `1500000` | Past this many input tokens, the agent is asked once to pace itself and wrap up. |
 | `turnHardInputTokens` | `3000000` | The ceiling for one segment of work. |
-| `maxAutoContinues` | `2` | When the ceiling is hit with the plan still open, earlier steps are summarized and work continues in a fresh segment — this many times. |
+| `maxAutoContinues` | `2` | When the ceiling is hit with the plan still open, earlier steps are summarized and work continues in a fresh segment, up to this many times. |
 | `compactAtInputTokens` | `110000` | When the conversation context grows past this, it's summarized mid-turn to keep fitting the model. Raise it for long-context models. |
 | `nativeTaskBudgetTokens` | `0` | Anthropic only: also send a native task budget to the model. |
 
@@ -86,7 +86,7 @@ Independently of these, one message can run for at most 3 hours.
 
 ## Rules
 
-Rules let you **forbid** specific agent actions. Put JSON files in `~/.abstract/rules/` — each file
+Rules let you **forbid** specific agent actions. Put JSON files in `~/.abstract/rules/`. Each file
 holds one rule or a list of rules:
 
 ```json
@@ -105,7 +105,7 @@ holds one rule or a list of rules:
 | `tool` | The action to match: an exact tool name, `*` for all, or a prefix ending in `*`. |
 | `input_matches` | Optional. A case-insensitive regular expression tested against the action's input. |
 | `action` | Must be `"block"`. Rules can only forbid, never allow. |
-| `message` | Why — the agent is told this and works around it. |
+| `message` | The reason. The agent is told this and works around it. |
 
 Rules are read at the start of each message. When one fires, the agent sees
 `blocked by your rule "no-arxiv-fetch": …` and takes another route. Common tool names:

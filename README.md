@@ -9,7 +9,7 @@
 **An AI research workbench that won't write a citation it can't trace to a real source.**
 
 abstract is a local, chat-first research assistant. Point it at a folder of papers and ask for
-what you need — a literature review, a related-work section, answers about your sources — and an
+what you need (a literature review, a related-work section, answers about your sources), and an
 agent searches, reads, screens, and drafts with you. What sets it apart is that citation integrity
 is enforced in code, not requested in a prompt:
 
@@ -27,7 +27,7 @@ is enforced in code, not requested in a prompt:
 
 ## Install
 
-On macOS or Linux, paste this into a terminal — nothing else is needed:
+On macOS or Linux, paste this into a terminal. Nothing else is needed:
 
 ```bash
 curl -fsSL https://useabstract.co/install.sh | sh
@@ -52,16 +52,16 @@ Run `abstract` with no argument to reopen your last workspace. `abstract --help`
 
 Open **Settings** in the app.
 
-- **Continue with ChatGPT** — sign in with your ChatGPT **Plus or Pro** account and abstract runs on
+- **Continue with ChatGPT:** sign in with your ChatGPT **Plus or Pro** account and abstract runs on
   your plan. No API key is needed, and usage counts toward your plan's limits. You can see and cap
   what abstract uses at [chatgpt.com/settings/usage](https://chatgpt.com/settings/usage). ChatGPT plans
   don't include embeddings, so library search falls back to keyword search unless you also add one
   of the providers below.
-- **API keys** — Anthropic, OpenAI, Google, OpenRouter, or a local Ollama server. Keys can also come
+- **API keys:** Anthropic, OpenAI, Google, OpenRouter, or a local Ollama server. Keys can also come
   from environment variables (`ANTHROPIC_API_KEY`, `OPENAI_API_KEY`, `GOOGLE_GENERATIVE_AI_API_KEY`,
   `OPENROUTER_API_KEY`, `OLLAMA_HOST`), which take precedence.
 
-Pick the model from the chat box — abstract uses it for every task: planning and writing, checking
+Pick the model from the chat box, and abstract uses it for every task: planning and writing, checking
 claims against their sources, and bulk screening. The list shows only recent models from the
 providers you've connected; until you pick one, abstract uses a sensible default from them.
 Whichever model checks a claim, a "supported" verdict still needs a verbatim quote that the code
@@ -69,14 +69,14 @@ finds in the source.
 
 ## What it does
 
-- **Your library** — ingests PDFs, Markdown, and text files with page-accurate chunks, and resolves
+- **Your library:** ingests PDFs, Markdown, and text files with page-accurate chunks, and resolves
   each document against the scholarly registries.
-- **Literature search** — searches OpenAlex, Crossref, and arXiv, follows citation chains, and
+- **Literature search:** searches OpenAlex, Crossref, and arXiv, follows citation chains, and
   records include/exclude decisions in a PRISMA-style screening log.
-- **Verified drafting** — writes named documents (reviews, sections, rebuttals) in Markdown, with
+- **Verified drafting:** writes named documents (reviews, sections, rebuttals) in Markdown, with
   per-sentence verification and comparison tables checked cell by cell.
-- **Export** — Markdown, LaTeX, and BibTeX, plus an audit file mapping every claim to its passage.
-- **Memory and skills** — learns your preferences from your edits (you approve each note), and
+- **Export:** Markdown, LaTeX, and BibTeX, plus an audit file mapping every claim to its passage.
+- **Memory and skills:** remembers your preferences (ones it only infers wait for your approval), and
   follows `SKILL.md` skills (markdown instructions with a name and description) from `~/.abstract/skills` or the workspace.
 
 ## Your data
@@ -88,7 +88,7 @@ a ChatGPT sign-in is stored in `~/.abstract/chatgpt-auth.json` (readable only by
 What leaves your machine:
 
 - **To the model provider you chose:** your messages and attachments, the passages the agent
-  retrieves to write and verify, and whole files in three cases — each newly ingested PDF (to
+  retrieves to write and verify, and whole files in three cases: each newly ingested PDF (to
   catalog its figures and tables), scanned PDFs (for OCR), and any file you ask it to look at
   as a whole. Use a local model with Ollama to keep document content on your machine.
 - **To scholarly services:** search queries and DOI lookups sent to OpenAlex, Crossref, arXiv,
@@ -98,7 +98,7 @@ Full details: [useabstract.co/docs/privacy](https://useabstract.co/docs/privacy/
 
 ## Contributing
 
-Bug reports and pull requests are welcome — see [CONTRIBUTING.md](CONTRIBUTING.md) for the
+Bug reports and pull requests are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md) for the
 development setup. The design is described in [ARCHITECTURE.md](ARCHITECTURE.md).
 
 ## License

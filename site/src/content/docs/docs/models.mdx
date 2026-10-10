@@ -1,6 +1,6 @@
 ---
 title: Connect a model
-description: Use your ChatGPT plan, your own API keys, or a local model with Ollama — and choose which model runs.
+description: Use your ChatGPT plan, your own API keys, or a local model with Ollama, and choose which model runs.
 ---
 
 import { Steps } from "@astrojs/starlight/components"
@@ -10,7 +10,7 @@ the model in the chat box. You can connect several and switch at any time.
 
 ## Your ChatGPT plan
 
-If you have **ChatGPT Plus or Pro**, abstract can run on your plan — no API key needed.
+If you have **ChatGPT Plus or Pro**, abstract can run on your plan. No API key needed.
 
 <Steps>
 
@@ -22,7 +22,7 @@ If you have **ChatGPT Plus or Pro**, abstract can run on your plan — no API ke
 
 The first time, a short notice explains that abstract's requests count toward your plan's limits.
 You can see and cap what abstract uses at
-[chatgpt.com/settings/usage](https://chatgpt.com/settings/usage) — the **Manage usage** link in
+[chatgpt.com/settings/usage](https://chatgpt.com/settings/usage). The **Manage usage** link in
 Settings and next to the model picker goes there.
 
 Good to know:
@@ -68,7 +68,7 @@ goes to a cloud provider.
 <Steps>
 
 1. Install Ollama, start it, and pull a model, for example `ollama pull <model>`.
-2. In **Settings → + Add provider → Ollama (local)**, enter the server address — usually
+2. In **Settings → + Add provider → Ollama (local)**, enter the server address, usually
    `http://localhost:11434`. (Or set `OLLAMA_HOST`, which takes precedence.)
 3. Your pulled models appear in the model picker.
 
@@ -80,8 +80,8 @@ depend a lot on the model's size and quality.
 ## Choosing the model
 
 Click the model name under the chat box. Models are grouped by provider, and only **connected**
-providers appear. Each list shows **recent models only** — the newest version of each model
-family — so it stays short.
+providers appear. Each list shows **recent models only** (the newest version of each model
+family), so it stays short.
 
 **One model does everything:** planning and writing, checking claims, reading scanned pages, and
 sub-agents all use the model you pick. When a ChatGPT model is selected, the chat box shows
@@ -100,7 +100,7 @@ verbatim quote that the code finds in the source. A weaker model tends to produc
 ## Embeddings
 
 Library search combines keyword search with semantic search. Semantic search needs an embedding
-model, which abstract picks automatically — it's never shown in the picker:
+model, which abstract picks automatically; it's never shown in the picker:
 
 1. OpenAI `text-embedding-3-small`, if OpenAI is connected,
 2. else Google `gemini-embedding-001`,

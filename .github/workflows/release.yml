@@ -52,7 +52,7 @@ jobs:
 
           ## Install
 
-          macOS and Linux — nothing else needed:
+          macOS and Linux, nothing else needed:
 
           ```bash
           curl -fsSL https://useabstract.co/install.sh | sh

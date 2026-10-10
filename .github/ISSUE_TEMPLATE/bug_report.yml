@@ -5,7 +5,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        Thanks for reporting. Many messages have a fix in the [troubleshooting guide](https://useabstract.co/docs/troubleshooting/) — worth a quick look first.
+        Thanks for reporting. Many messages have a fix in the [troubleshooting guide](https://useabstract.co/docs/troubleshooting/), worth a quick look first.
   - type: textarea
     id: what
     attributes:

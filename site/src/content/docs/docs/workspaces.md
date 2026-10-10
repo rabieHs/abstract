@@ -11,11 +11,11 @@ drafts, the agent's notes, and the conversations. Open one with `abstract <folde
 
 On the **Workspaces** screen you can:
 
-- **Create a new workspace** — it's made in `~/Abstract/<name>`.
+- **Create a new workspace.** It's made in `~/Abstract/<name>`.
 - **Open** a recent workspace (the last 8 are listed), or type any existing folder path
   (`~` works) to open it.
 - **Delete** a workspace you're not currently in. This permanently removes the folder and
-  everything inside it — your files included. As a safeguard, abstract only deletes folders that
+  everything inside it, your files included. As a safeguard, abstract only deletes folders that
   contain an `.openpaper/` folder (created the first time a folder is opened as a workspace), and
   never your home folder or the workspace that's open.
 
@@ -38,7 +38,7 @@ You can add your own folders and files anywhere.
 The panel on the right shows the workspace. Folders come first; `drafts/` and `sources/` open by
 default, and it refreshes every few seconds.
 
-- **Click** a file to preview it — PDFs and HTML, images, rendered Markdown, or plain text.
+- **Click** a file to preview it: PDFs and HTML, images, rendered Markdown, or plain text.
 - **Hover** a file to download it, delete it, or (for Markdown) open a printable view with **PDF**
   so you can save it as a PDF.
 - **Drag** files between folders to move them. A moved paper keeps its library entry and notes.
@@ -53,33 +53,33 @@ were identified, screened, and included.
 
 Click **+** in the chat box:
 
-- **Save files to workspace** — PDFs, Markdown, text, LaTeX, BibTeX, or images go into `sources/`.
+- **Save files to workspace:** PDFs, Markdown, text, LaTeX, BibTeX, or images go into `sources/`.
   A file with the same name is replaced.
-- **Attach to this message (not saved)** — up to 6 files (PDF, Markdown, text, images) sent with
+- **Attach to this message (not saved):** up to 6 files (PDF, Markdown, text, images) sent with
   one message only, for quick questions.
-- **Import from URL** — paste a paper URL, DOI, or arXiv id and the agent fetches it.
+- **Import from URL:** paste a paper URL, DOI, or arXiv id and the agent fetches it.
 
 Or simply copy files into the workspace folder.
 
 ## How papers become searchable
 
-Saving a file does **not** index it. The agent ingests a paper when it needs it — or ask it to
+Saving a file does **not** index it. The agent ingests a paper when it needs it, or you can ask it to
 ("ingest everything in sources/"). Ingesting:
 
 1. extracts the text, page by page, and splits it into passages;
-2. looks the paper up in Crossref and OpenAlex — by DOI if it finds one, otherwise by title —
+2. looks the paper up in Crossref and OpenAlex (by DOI if it finds one, otherwise by title),
    so citations use the official record;
 3. assigns a **grade**: <code>peer-reviewed</code>, <code>preprint</code> (for example arXiv), or
-   <code>note</code> (no registry match — your own notes, for instance);
+   <code>note</code> (no registry match, such as your own notes);
 4. catalogs figures, tables, charts, and equations so they're searchable too.
 
 Ingested files show **INGESTED** and their grade in the Files panel.
 
 **Scanned PDFs** (image-only pages) are detected automatically and transcribed by your model, ten
-pages at a time. A scanned PDF must be under 18 MB — split larger ones first.
+pages at a time. A scanned PDF must be under 18 MB, so split larger ones first.
 
 :::caution[Reading before citing]
-The agent can only cite sources it has actually **opened** — read page by page, viewed, or
+The agent can only cite sources it has actually **opened**: read page by page, viewed, or
 summarized in a note. A downloaded but unread paper can't be cited. If you ask for a draft before
 anything was read, it will tell you which papers it still needs to read.
 :::

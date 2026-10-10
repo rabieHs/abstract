@@ -1,10 +1,9 @@
 ---
 import Landing from "../layouts/Landing.astro"
-
-const install = "curl -fsSL https://useabstract.co/install.sh | sh"
+import InstallTabs from "../components/InstallTabs.astro"
 
 // The demo uses real papers and VERBATIM quotes (checked against the arXiv
-// abstracts) — a page about not inventing citations must not invent any.
+// abstracts). A page about not inventing citations must not invent any.
 const demo = [
   {
     id: "s1",
@@ -13,7 +12,7 @@ const demo = [
     cite: 1,
     quote:
       "We propose a new simple network architecture, the Transformer, based solely on attention mechanisms, dispensing with recurrence and convolutions entirely.",
-    source: "Vaswani et al. — Attention Is All You Need (2017)",
+    source: "Vaswani et al. (2017). Attention Is All You Need",
     meta: "arXiv:1706.03762 · p. 1 · preprint",
     note: "Every part of the claim follows from the passage, so the sentence is marked supported.",
   },
@@ -24,7 +23,7 @@ const demo = [
     cite: 2,
     quote:
       "these residual networks are easier to optimize, and can gain accuracy from considerably increased depth.",
-    source: "He et al. — Deep Residual Learning for Image Recognition (2015)",
+    source: "He et al. (2015). Deep Residual Learning for Image Recognition",
     meta: "arXiv:1512.03385 · p. 1 · preprint",
     note: "“Always more accurate” is stronger than the source’s “can gain accuracy”, so the sentence is only partly supported.",
   },
@@ -34,7 +33,7 @@ const demo = [
     text: "Residual connections were first introduced for machine translation",
     cite: 2,
     quote: "",
-    source: "He et al. — Deep Residual Learning for Image Recognition (2015)",
+    source: "He et al. (2015). Deep Residual Learning for Image Recognition",
     meta: "arXiv:1512.03385",
     note: "No passage in the cited source supports this claim. Export stops until you fix it or explicitly accept it.",
   },
@@ -43,12 +42,12 @@ const demo = [
 const features = [
   ["discovery", "Literature search", "Searches OpenAlex, Crossref, and arXiv at once, deduplicated, and follows citation chains backward and forward."],
   ["discovery", "Screening log", "Every search and include/exclude decision is recorded with its reason, and exports as a PRISMA-style flow."],
-  ["reading", "Reads before it cites", "Only sources the agent actually opened can be cited — downloading a paper is not reading it."],
+  ["reading", "Reads before it cites", "Only sources the agent actually opened can be cited. Downloading a paper is not reading it."],
   ["reading", "Scanned PDFs and figures", "Image-only PDFs are transcribed by your model; figures, tables, and equations become searchable."],
   ["writing", "Verified tables", "Comparison tables and extraction matrices are checked cell by cell, exactly like sentences."],
   ["writing", "Numeric or author–year", "Citations as [1] or (Hooker et al., 2020), with bibliographies built only from registry records."],
   ["scale", "Parallel readers", "For big reading lists the agent hands work to up to four sub-agents, under the same integrity rules."],
-  ["craft", "38 built-in skills", "Venue review rubrics (NeurIPS, ACL, CVPR, IEEE, Nature…), methods checklists, and writing guides — and you can add your own."],
+  ["craft", "38 built-in skills", "Venue review rubrics (NeurIPS, ACL, CVPR, IEEE, Nature…), methods checklists, and writing guides. You can add your own."],
   ["control", "Steer while it works", "A visible plan, messages the agent reads at its next step, and a stop button that actually stops."],
   ["memory", "Memory you control", "What you ask it to remember is saved right away; preferences it only infers wait for your approval."],
   ["analysis", "Runs your analysis", "Executes Python scripts on your data in the workspace, without access to your API keys."],
@@ -57,8 +56,8 @@ const features = [
 ---
 
 <Landing
-  title="abstract — research with an agent, every citation verified"
-  description="A free, open-source research workbench. An AI agent searches, reads, and drafts with you — and won't write a citation it can't trace to a real source."
+  title="abstract: research with an agent, every citation verified"
+  description="A free, open-source research workbench. An AI agent searches, reads, and drafts with you, and won't write a citation it can't trace to a real source."
 >
   <style>
     .hero { text-align: center; padding-top: 56px; padding-bottom: 30px; }
@@ -67,20 +66,6 @@ const features = [
     .hero .sub { max-width: 640px; margin: 18px auto 0; font-size: 18px; color: var(--muted); }
     .hero .sub b { color: var(--ink); font-weight: 600; }
     .cta { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-top: 28px; }
-    .install {
-      display: flex; align-items: center; justify-content: space-between; gap: 12px;
-      max-width: 600px; margin: 26px auto 0; background: var(--code-bg); color: var(--code-ink);
-      font-family: var(--mono); font-size: 14px; padding: 12px 14px 12px 18px;
-    }
-    .install > span { overflow-x: auto; white-space: nowrap; scrollbar-width: none; text-align: left; }
-    .install > span::-webkit-scrollbar { display: none; }
-    .install .p { opacity: 0.5; margin-right: 8px; }
-    .install button {
-      font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;
-      background: transparent; color: var(--code-ink); border: 1px solid color-mix(in srgb, var(--code-ink) 30%, transparent);
-      padding: 4px 9px; cursor: pointer;
-    }
-    .install button:hover { border-color: var(--code-ink); }
     .fine { margin-top: 12px; font-size: 13px; color: var(--muted); }
 
     section.block { padding-top: 96px; }
@@ -180,18 +165,14 @@ const features = [
 
   <!-- ============ HERO ============ -->
   <header class="hero wrap">
-    <canvas id="mark" width="680" height="340" aria-label="abstract — wordmark assembling from polygons"></canvas>
+    <canvas id="mark" width="680" height="340" aria-label="abstract wordmark assembling from polygons"></canvas>
     <h1>Research with an agent.<br />Every citation verified.</h1>
     <p class="sub">
-      abstract searches the literature, reads your papers, and drafts with you — and{" "}
+      abstract searches the literature, reads your papers, and drafts with you, and{" "}
       <b>every cited sentence is checked against the passage it cites</b>. Free, open source,
       and it runs on your own computer.
     </p>
-    <div class="install" role="group" aria-label="install command">
-      <span><span class="p">$</span>{install}</span>
-      <button type="button" data-copy={install}>copy</button>
-    </div>
-    <p class="fine">macOS and Linux · nothing else to install · developers: <code>bun install -g abstract-cli</code></p>
+    <InstallTabs />
     <div class="cta">
       <a class="btn" href="/docs/quick-start/">Get started</a>
       <a class="btn ghost" href="/docs/">Read the docs</a>
@@ -260,7 +241,7 @@ const features = [
       <div>
         <span class="label">verification</span>
         <b>A quote, or it isn't “supported”</b>
-        <p>A sentence is only marked supported if the checker quotes the source word for word — and code confirms the quote is really there.</p>
+        <p>A sentence is only marked supported if the checker quotes the source word for word, and code confirms the quote is really there.</p>
       </div>
       <div>
         <span class="label">export</span>
@@ -275,16 +256,16 @@ const features = [
     <div class="head reveal">
       <span class="label">how it works</span>
       <h2>From a question to a verified document</h2>
-      <p>One agent plans the work, shows you its plan, and keeps going until it's done — you can steer it at any point.</p>
+      <p>One agent plans the work, shows you its plan, and keeps going until it's done. You can steer it at any point.</p>
     </div>
     <div class="steps reveal">
       <div class="step"><span class="n">01</span><b>Ask</b><p>In plain words, in a chat. Point it at a folder of your own papers, or start from nothing.</p></div>
       <div class="step"><span class="n">02</span><b>Search</b><p>It searches OpenAlex, Crossref, and arXiv, follows citations, and logs every include and exclude decision.</p></div>
       <div class="step"><span class="n">03</span><b>Read</b><p>It fetches open-access PDFs, reads them page by page, and keeps notes. Only what it opened can be cited.</p></div>
       <div class="step"><span class="n">04</span><b>Write & verify</b><p>It drafts in Markdown and checks every cited sentence and table cell against the passage it cites.</p></div>
-      <div class="step"><span class="n">05</span><b>Export</b><p>Markdown, LaTeX, and BibTeX — plus an audit file that maps every claim to its evidence.</p></div>
+      <div class="step"><span class="n">05</span><b>Export</b><p>Markdown, LaTeX, and BibTeX, plus an audit file that maps every claim to its evidence.</p></div>
     </div>
-    <p class="ask reveal">try: <span>“Do a literature review on frugal AI benchmarks and write a related-work section.”</span></p>
+    <p class="ask reveal">try: <span>“Review recent work on retrieval-augmented generation and write a related-work section with verified citations.”</span></p>
   </section>
 
   <!-- ============ FEATURES ============ -->
@@ -366,11 +347,8 @@ const features = [
   <section class="final wrap reveal">
     <span class="label">free and open source · apache-2.0</span>
     <h2 style="margin-top: 10px;">Your next review, with receipts.</h2>
-    <p>Install in one line. No account, no subscription, nothing else to install.</p>
-    <div class="install" role="group" aria-label="install command">
-      <span><span class="p">$</span>{install}</span>
-      <button type="button" data-copy={install}>copy</button>
-    </div>
+    <p>Install in one line. No account, no subscription.</p>
+    <InstallTabs />
     <p class="fine">
       Every release is built by GitHub Actions from the public source, and the installer checks its
       checksum before installing. <a href="/docs/install/#where-the-files-come-from">How to verify</a>

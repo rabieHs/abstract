@@ -3,10 +3,10 @@ title: Verified drafting
 description: How abstract writes documents, checks every cited sentence, and shows you the evidence.
 ---
 
-Ask for a document by what it is — a related-work section, a literature-review chapter, an
-introduction, a rebuttal — and the agent writes it as a **named document** in `drafts/`.
+Ask for a document by what it is (a related-work section, a literature-review chapter, an
+introduction, a rebuttal), and the agent writes it as a **named document** in `drafts/`.
 
-> Write a verified related-work section on frugal AI benchmarks, numeric citations.
+> Write a verified related-work section on graph neural networks for drug discovery, numeric citations.
 
 ## How a verified draft is made
 
@@ -14,7 +14,7 @@ introduction, a rebuttal — and the agent writes it as a **named document** in 
    **opened** (read, viewed, or summarized) can be cited.
 2. **Write.** It plans the sections and writes each in Markdown, attaching the exact passage
    behind every factual claim.
-3. **Verify.** Every cited sentence — and every factual cell of every table — is checked against
+3. **Verify.** Every cited sentence, and every factual cell of every table, is checked against
    the passage it cites, in parallel.
 
 ## The verdicts
@@ -24,7 +24,7 @@ introduction, a rebuttal — and the agent writes it as a **named document** in 
 | <span class="verdict ok">supported</span> | Every part of the claim follows from the cited passage, backed by a word-for-word quote. |
 | <span class="verdict partial">partial</span> | Some of the claim is supported, or the claim is stronger than the evidence ("proves" vs "suggests"). |
 | <span class="verdict bad">unsupported</span> | The cited passage doesn't support the claim, or the citation is invalid. |
-| uncited | No citation — the author's own position. Counted, never verified. |
+| uncited | No citation: the author's own position. Counted, never verified. |
 
 The rule behind <span class="verdict ok">supported</span> is strict and enforced in code: the
 check must quote the source **verbatim**, and the quote must really appear in the cited passage
@@ -44,11 +44,11 @@ In the chat, the draft view colors each sentence by its verdict:
   grade, and the PDF at the cited page.
 
 If a source file was edited or removed after the draft was written, its passages show *This
-passage is no longer in the library* — revise the draft to re-check those sentences.
+passage is no longer in the library*. Revise the draft to re-check those sentences.
 
 ## Revising
 
-Ask for changes in plain words — "shorten section 2", "add a comparison table", "fix the
+Ask for changes in plain words: "shorten section 2", "add a comparison table", "fix the
 unsupported sentences". Using the **same document name** revises the same file in place, and
 sentences you didn't change keep their verdicts without being checked again. The draft's version
 number goes up with each revision; earlier versions aren't kept as separate files.
@@ -66,8 +66,8 @@ Bibliographies are always built from the registry records, never written by the 
 ## Plain documents
 
 Not everything needs citations. For emails, motivation letters, outlines, statements, or
-conversation summaries, the agent writes a **plain** document — no verification, no verdict colors,
-no export gate. A draft also falls back to plain when there's nothing citable to draw on yet; the
+conversation summaries, the agent writes a **plain** document, with no verification, no verdict colors,
+and no export gate. A draft also falls back to plain when there's nothing citable to draw on yet; the
 agent tells you when that happens. To turn a plain document into a verified one, ask for it
 explicitly.
 

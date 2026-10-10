@@ -12,7 +12,7 @@ bun run build        # build the web UI once (the CLI serves apps/web/dist)
 bun run dev          # start the app from source; it opens your last workspace
 ```
 
-For UI work, run the Vite dev server alongside it — it hot-reloads and proxies `/api` to the app:
+For UI work, run the Vite dev server alongside it. It hot-reloads and proxies `/api` to the app:
 
 ```bash
 bun run dev --no-open        # terminal 1: the app server on http://localhost:4477
@@ -38,7 +38,7 @@ To try a model, connect a provider in Settings or export a key (for example `ANT
 
 ## Website and docs
 
-The site at [useabstract.co](https://useabstract.co) lives in `site/` — an Astro project with
+The site at [useabstract.co](https://useabstract.co) lives in `site/`, an Astro project with
 Starlight docs, kept outside the app's workspaces so `bun install` at the root doesn't pull it in.
 
 ```bash
@@ -48,7 +48,7 @@ bun run dev        # http://localhost:4321
 ```
 
 Docs pages are Markdown in `site/src/content/docs/docs/`; the landing page is
-`site/src/pages/index.astro`. Keep the docs true to the code — when you change behavior, update the
+`site/src/pages/index.astro`. Keep the docs true to the code: when you change behavior, update the
 page that describes it.
 
 ## Releasing
@@ -57,7 +57,7 @@ page that describes it.
 2. Commit, then tag and push: `git tag v0.2.0 && git push origin v0.2.0`.
 3. The **Release** workflow checks the tag matches the version, runs the tests, builds the
    standalone executables for every platform, attests them, and publishes the GitHub release with
-   `SHA256SUMS` — the installer picks it up automatically.
+   `SHA256SUMS`. The installer picks it up automatically.
 4. Publish the npm package: `bun run package`, then
    `npm publish apps/cli/abstract-cli-<version>.tgz` (needs the npm owner's 2FA).
 5. Deploy the website if the docs changed: `cd site && vercel deploy --prod`.

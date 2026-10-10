@@ -1,11 +1,11 @@
 #!/bin/sh
-# abstract installer — https://useabstract.co
+# abstract installer: https://useabstract.co
 #
 #   curl -fsSL https://useabstract.co/install.sh | sh
 #
 # Downloads the standalone abstract for your system from GitHub Releases,
 # verifies its SHA-256 checksum, and installs it to ~/.local/bin. Nothing else
-# is needed — no Bun, no Node.
+# is needed: no Bun, no Node.
 #
 # Options (environment variables):
 #   ABSTRACT_VERSION=0.2.0       install a specific version (default: latest)
@@ -23,7 +23,7 @@ fail() { printf 'error: %s\n' "$*" >&2; exit 1; }
 case "$(uname -s)" in
   Darwin) os=darwin ;;
   Linux) os=linux ;;
-  *) fail "abstract runs on macOS and Linux. On Windows, use WSL (Linux) — untested — or see https://useabstract.co/docs/install/" ;;
+  *) fail "abstract runs on macOS and Linux. On Windows, use WSL (Linux, untested), or see https://useabstract.co/docs/install/" ;;
 esac
 case "$(uname -m)" in
   arm64 | aarch64) arch=arm64 ;;
@@ -35,7 +35,7 @@ if [ "$os" = darwin ] && [ "$arch" = x64 ] && [ "$(sysctl -n sysctl.proc_transla
   arch=arm64
 fi
 if [ "$os" = linux ] && (ldd --version 2>&1 | grep -qi musl); then
-  fail "musl-based Linux (e.g. Alpine) isn't supported — use a glibc distribution, or install with npm: https://useabstract.co/docs/install/"
+  fail "musl-based Linux (e.g. Alpine) isn't supported. Use a glibc distribution, or install with Bun: https://useabstract.co/docs/install/"
 fi
 target="$os-$arch"
 
@@ -70,7 +70,7 @@ if command -v sha256sum >/dev/null 2>&1; then
 else
   actual="$(shasum -a 256 "$tmp/abstract.tar.gz" | cut -d' ' -f1)"
 fi
-[ "$expected" = "$actual" ] || fail "checksum mismatch — the download may be corrupted; nothing was installed"
+[ "$expected" = "$actual" ] || fail "checksum mismatch: the download may be corrupted, so nothing was installed"
 say "Checksum verified."
 
 # --- install ----------------------------------------------------------------
