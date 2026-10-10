@@ -126,7 +126,7 @@ export default function Workspaces({ onOpened }: { onOpened: (w: WorkspaceInfo) 
         {error && <p className="mt-3 text-sm text-bad">{error}</p>}
 
         <p className="steplabel mt-10 !tracking-[0.18em]">
-          local-first · your files never leave this machine
+          local-first · your files are stored on this machine
         </p>
       </div>
     </div>

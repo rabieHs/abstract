@@ -1,0 +1,44 @@
+---
+title: Welcome to abstract
+description: What abstract is, how it keeps citations honest, and where to start.
+---
+
+import { CardGrid, LinkCard } from "@astrojs/starlight/components"
+
+**abstract** is a research workbench that runs on your own computer. You talk to an AI agent in a
+chat; it searches the literature, reads your papers, and writes with you — literature reviews,
+related-work sections, answers about your sources, rebuttals, and more.
+
+What makes it different is that citation integrity is **enforced in code**, not just requested
+in a prompt:
+
+- **Bibliographic metadata is never written by a model.** Titles, authors, venues, and DOIs are
+  copied from Crossref and OpenAlex records.
+- **Every cited sentence is checked.** A separate verification step must quote the source word
+  for word, and code confirms the quote is really in the passage. Each sentence is marked
+  <span class="verdict ok">supported</span>, <span class="verdict partial">partial</span>, or
+  <span class="verdict bad">unsupported</span>.
+- **Export is gated.** Exporting re-checks every DOI and stops on unsupported claims unless you
+  explicitly accept them.
+
+> Drafting is agentic, verification is deterministic, approval is human.
+
+## Start here
+
+<CardGrid>
+  <LinkCard title="Install" description="Bun, then one command." href="/docs/install/" />
+  <LinkCard title="Quick start" description="From an empty folder to a verified draft." href="/docs/quick-start/" />
+  <LinkCard title="Connect a model" description="Your ChatGPT plan, your API keys, or a local model." href="/docs/models/" />
+  <LinkCard title="Troubleshooting" description="Common messages and how to fix them." href="/docs/troubleshooting/" />
+</CardGrid>
+
+## How the docs are organized
+
+- **Start here** — install, a ten-minute walkthrough, and choosing a model.
+- **Guides** — one page per part of the workflow: workspaces, searching, drafting, exporting,
+  steering the agent, skills, and memory.
+- **Reference** — the command line, configuration files, privacy, and troubleshooting.
+
+abstract is free and open source under the Apache 2.0 license. The code is on
+[GitHub](https://github.com/rabieHs/abstract) and the package is
+[`abstract-cli` on npm](https://www.npmjs.com/package/abstract-cli).

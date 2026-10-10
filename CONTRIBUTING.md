@@ -36,6 +36,21 @@ To try a model, connect a provider in Settings or export a key (for example `ANT
 
 [ARCHITECTURE.md](ARCHITECTURE.md) explains how the pieces fit together.
 
+## Website and docs
+
+The site at [useabstract.co](https://useabstract.co) lives in `site/` — an Astro project with
+Starlight docs, kept outside the app's workspaces so `bun install` at the root doesn't pull it in.
+
+```bash
+cd site
+bun install
+bun run dev        # http://localhost:4321
+```
+
+Docs pages are Markdown in `site/src/content/docs/docs/`; the landing page is
+`site/src/pages/index.astro`. Keep the docs true to the code — when you change behavior, update the
+page that describes it.
+
 ## Before you open a pull request
 
 ```bash

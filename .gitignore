@@ -1,5 +1,7 @@
 node_modules/
 dist/
+.astro/
+.vercel/
 .openpaper/
 *.log
 .DS_Store

@@ -1,0 +1,110 @@
+---
+title: Connect a model
+description: Use your ChatGPT plan, your own API keys, or a local model with Ollama — and choose which model runs.
+---
+
+import { Steps } from "@astrojs/starlight/components"
+
+abstract doesn't come with a model of its own. Connect at least one in **Settings**, then pick
+the model in the chat box. You can connect several and switch at any time.
+
+## Your ChatGPT plan
+
+If you have **ChatGPT Plus or Pro**, abstract can run on your plan — no API key needed.
+
+<Steps>
+
+1. Open **Settings** and click **Continue with ChatGPT**.
+2. A new tab opens at OpenAI. Sign in and allow abstract to use your plan.
+3. The tab closes itself and Settings shows **ChatGPT plan · active** with your email.
+
+</Steps>
+
+The first time, a short notice explains that abstract's requests count toward your plan's limits.
+You can see and cap what abstract uses at
+[chatgpt.com/settings/usage](https://chatgpt.com/settings/usage) — the **Manage usage** link in
+Settings and next to the model picker goes there.
+
+Good to know:
+
+- **Plan usage must be allowed.** If you declined it during sign-in, Settings shows
+  *plan usage off*; click **Continue with ChatGPT** again and allow it.
+- **ChatGPT plans don't include embeddings,** so library search falls back to keywords unless
+  OpenAI, Google, or Ollama is also connected (see [Embeddings](#embeddings)).
+- **Usage limits.** When the limit is reached, the chat shows a *Usage limit reached* card with
+  **Manage usage** and **Switch model**. Everything done so far is saved.
+- **Sign out** revokes abstract's access at OpenAI. **Use a different ChatGPT account** signs in
+  with another account.
+- A sign-in must be finished within 10 minutes, and before you restart abstract.
+
+## API keys
+
+Open **Settings → + Add provider**, choose a provider, and paste the key:
+
+| Provider | Key from |
+|---|---|
+| Anthropic | console.anthropic.com |
+| OpenAI | platform.openai.com |
+| Google | aistudio.google.com |
+| OpenRouter | openrouter.ai (one key for many vendors) |
+
+Keys are stored in `~/.abstract/config.json` on your computer. You can also set them as
+environment variables, which take precedence:
+
+```bash
+export ANTHROPIC_API_KEY=…
+export OPENAI_API_KEY=…
+export GOOGLE_GENERATIVE_AI_API_KEY=…
+export OPENROUTER_API_KEY=…
+```
+
+To change or remove a key, click **manage** next to the provider.
+
+## A local model with Ollama
+
+[Ollama](https://ollama.com) runs open models on your own machine, so document content never
+goes to a cloud provider.
+
+<Steps>
+
+1. Install Ollama, start it, and pull a model, for example `ollama pull <model>`.
+2. In **Settings → + Add provider → Ollama (local)**, enter the server address — usually
+   `http://localhost:11434`. (Or set `OLLAMA_HOST`, which takes precedence.)
+3. Your pulled models appear in the model picker.
+
+</Steps>
+
+abstract's agent relies heavily on tool calling, so choose a model that supports tools; results
+depend a lot on the model's size and quality.
+
+## Choosing the model
+
+Click the model name under the chat box. Models are grouped by provider, and only **connected**
+providers appear. Each list shows **recent models only** — the newest version of each model
+family — so it stays short.
+
+**One model does everything:** planning and writing, checking claims, reading scanned pages, and
+sub-agents all use the model you pick. When a ChatGPT model is selected, the chat box shows
+*Using ChatGPT plan · Manage usage*.
+
+If you haven't picked one, abstract uses a default from the first connected provider, in this
+order: ChatGPT plan, Anthropic (newest Sonnet), OpenAI (newest GPT), Google (newest Gemini Flash),
+OpenRouter, Ollama.
+
+:::note
+Whichever model checks a claim, a <span class="verdict ok">supported</span> verdict still needs a
+verbatim quote that the code finds in the source. A weaker model tends to produce more
+<span class="verdict partial">partial</span> verdicts, not false greens.
+:::
+
+## Embeddings
+
+Library search combines keyword search with semantic search. Semantic search needs an embedding
+model, which abstract picks automatically — it's never shown in the picker:
+
+1. OpenAI `text-embedding-3-small`, if OpenAI is connected,
+2. else Google `gemini-embedding-001`,
+3. else Ollama `nomic-embed-text`.
+
+With none of these connected (for example, only a ChatGPT plan), search is keyword-only. Everything
+else works the same.

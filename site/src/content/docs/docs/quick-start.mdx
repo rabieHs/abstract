@@ -1,0 +1,61 @@
+---
+title: Quick start
+description: From an empty folder to a verified, exported draft in about ten minutes.
+---
+
+import { Steps } from "@astrojs/starlight/components"
+
+This walkthrough assumes abstract is [installed](/docs/install/).
+
+<Steps>
+
+1. **Open a workspace.** A workspace is just a folder. Create one and open it:
+
+   ```bash
+   mkdir ~/my-review
+   abstract ~/my-review
+   ```
+
+   Your browser opens at `http://localhost:4477` with an empty chat. (You can also create
+   workspaces later from the **Workspaces** screen; those go in `~/Abstract/`.)
+
+2. **Connect a model.** Open **Settings** in the sidebar and either:
+   - click **Continue with ChatGPT** to use your ChatGPT Plus or Pro plan, or
+   - click **+ Add provider** and paste an API key (Anthropic, OpenAI, Google, or OpenRouter),
+     or point it at a local Ollama server.
+
+   See [Connect a model](/docs/models/) for details.
+
+3. **Add your papers (optional).** In the chat box, click **+** → **Save files to workspace** and
+   pick PDFs. They're saved to `sources/` and appear in the **Files** panel on the right. You can
+   also copy files into the folder yourself — the panel refreshes every few seconds.
+
+   Files are *not* indexed automatically: the agent ingests what it needs, or you can ask it to
+   ("ingest my PDFs").
+
+4. **Ask for something.** Write in plain words, for example:
+
+   > Do a literature review on retrieval-augmented generation for question answering, then write
+   > a verified related-work section.
+
+   The agent shows its plan, searches OpenAlex, Crossref, and arXiv, fetches open-access PDFs,
+   reads them, and drafts. You can keep typing while it works — it reads your message at its next
+   step — or press the stop button.
+
+5. **Read the draft.** The draft appears in the chat with each cited sentence colored by its
+   verdict: green for <span class="verdict ok">supported</span>, amber for
+   <span class="verdict partial">partial</span>, red for <span class="verdict bad">unsupported</span>.
+   Hover a sentence to see the exact quote behind it; click to open the source at that page.
+
+6. **Revise and export.** Ask for changes ("tighten the second paragraph", "fix the unsupported
+   sentences") — the same document is revised in place. When you're happy, click **Export** on the
+   draft. You get Markdown, LaTeX, BibTeX, and an audit file in `drafts/`.
+
+</Steps>
+
+## What next
+
+- Learn what the verdicts mean in [Verified drafting](/docs/verified-drafting/).
+- See how searching and screening work in [Literature search](/docs/literature-search/).
+- Keep a review going over several sessions — conversations are saved per workspace, and the agent
+  can search your earlier ones.

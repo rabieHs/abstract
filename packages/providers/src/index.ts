@@ -150,6 +150,13 @@ const OPENROUTER_RECENT = 30
 const liveCache = new Map<string, { at: number; models: string[] }>()
 const LIVE_TTL_MS = 10 * 60 * 1000
 
+/** Ollama's OpenAI-compatible endpoint. OLLAMA_HOST wins over the Settings value
+ *  (like API keys); either may be given with or without the /v1 suffix. */
+export function ollamaBaseURL(config: Config): string {
+  const host = process.env["OLLAMA_HOST"] ?? config.providers["ollama"]?.baseURL ?? "http://localhost:11434"
+  return `${host.replace(/\/+$/, "").replace(/\/v1$/, "")}/v1`
+}
+
 function apiKey(config: Config, provider: string, envKey: string): string | undefined {
   return process.env[envKey] ?? config.providers[provider]?.apiKey
 }
@@ -264,9 +271,7 @@ export function resolveModel(spec: string, config: Config = loadConfig()): Langu
     case "ollama":
       return createOpenAICompatible({
         name: "ollama",
-        baseURL:
-          config.providers["ollama"]?.baseURL ??
-          `${process.env["OLLAMA_HOST"] ?? "http://localhost:11434"}/v1`,
+        baseURL: ollamaBaseURL(config),
       })(model)
     default:
       throw new Error(`unknown provider "${provider}"`)
@@ -294,9 +299,7 @@ export async function embedderForRole(
     case "ollama":
       em = createOpenAICompatible({
         name: "ollama",
-        baseURL:
-          config.providers["ollama"]?.baseURL ??
-          `${process.env["OLLAMA_HOST"] ?? "http://localhost:11434"}/v1`,
+        baseURL: ollamaBaseURL(config),
       }).textEmbeddingModel(model)
       break
     default:
@@ -392,11 +395,7 @@ async function fetchProviderModels(providerId: string, config: Config): Promise<
           .map((m) => m.id)
       }
       case "ollama": {
-        const base =
-          config.providers["ollama"]?.baseURL ??
-          process.env["OLLAMA_HOST"] ??
-          "http://localhost:11434"
-        const r = await fetch(`${base.replace(/\/v1\/?$/, "")}/api/tags`)
+        const r = await fetch(`${ollamaBaseURL(config).replace(/\/v1$/, "")}/api/tags`)
         if (!r.ok) return []
         const d = (await r.json()) as { models?: { name: string }[] }
         return (d.models ?? []).map((m) => m.name)

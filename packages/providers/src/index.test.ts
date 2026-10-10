@@ -2,7 +2,7 @@ import { afterEach, beforeEach, describe, expect, test } from "bun:test"
 import { join } from "node:path"
 import { tmpdir } from "node:os"
 import type { Config } from "@abstract/core"
-import { anthropicBudgetFetch, recentModels, roleSpec } from "./index.ts"
+import { anthropicBudgetFetch, ollamaBaseURL, recentModels, roleSpec } from "./index.ts"
 
 const ENV_KEYS = [
   "ANTHROPIC_API_KEY",
@@ -111,6 +111,20 @@ describe("recentModels keeps the newest version of each family", () => {
 
   test("unknown naming schemes pass through instead of vanishing", () => {
     expect(recentModels("ollama", ["llama4:8b", "qwen3:14b"])).toEqual(["llama4:8b", "qwen3:14b"])
+  })
+})
+
+describe("Ollama base URL", () => {
+  test("the Settings value works with or without /v1 and a trailing slash", () => {
+    for (const v of ["http://localhost:11434", "http://localhost:11434/", "http://localhost:11434/v1", "http://localhost:11434/v1/"]) {
+      expect(ollamaBaseURL(cfg({}, { ollama: { baseURL: v } }))).toBe("http://localhost:11434/v1")
+    }
+  })
+  test("OLLAMA_HOST wins over the Settings value; default is localhost", () => {
+    process.env["OLLAMA_HOST"] = "http://gpu-box:11434"
+    expect(ollamaBaseURL(cfg({}, { ollama: { baseURL: "http://localhost:11434" } }))).toBe("http://gpu-box:11434/v1")
+    delete process.env["OLLAMA_HOST"]
+    expect(ollamaBaseURL(cfg({}, {}))).toBe("http://localhost:11434/v1")
   })
 })
 

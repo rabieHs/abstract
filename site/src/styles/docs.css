@@ -1,0 +1,101 @@
+/* Starlight themed with the app's design system: paper and ink, one blue
+   accent, serif headings, mono labels — squared, hairline structure. */
+
+:root {
+  --sl-font: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+  --sl-font-mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  --abs-serif: Charter, "Bitstream Charter", "Sitka Text", Cambria, Georgia, serif;
+  --sl-content-width: 46rem;
+
+  /* dark theme (Starlight's default block) */
+  --sl-color-accent-low: #1c2a3e;
+  --sl-color-accent: #8fb0dd;
+  --sl-color-accent-high: #d3e0f2;
+  --sl-color-white: #ecebe7;
+  --sl-color-gray-1: #dddcd8;
+  --sl-color-gray-2: #b9bbbf;
+  --sl-color-gray-3: #8f949b;
+  --sl-color-gray-4: #6a6f76;
+  --sl-color-gray-5: #3b3e42;
+  --sl-color-gray-6: #26282b;
+  --sl-color-black: #1a1b1d;
+}
+
+:root[data-theme="light"] {
+  --sl-color-accent-low: #eaeff6;
+  --sl-color-accent: #2f5382;
+  --sl-color-accent-high: #1f3a5e;
+  --sl-color-white: #26282b;
+  --sl-color-gray-1: #2f3236;
+  --sl-color-gray-2: #4a4e54;
+  --sl-color-gray-3: #6b7078;
+  --sl-color-gray-4: #8a8f98;
+  --sl-color-gray-5: #c9ccd0;
+  --sl-color-gray-6: #e5e5e1;
+  --sl-color-gray-7: #ececea;
+  --sl-color-black: #f4f4f2;
+}
+
+/* squared, print-like: no rounded corners, no shadows */
+.sl-markdown-content *,
+.sidebar-content *,
+starlight-tabs *,
+.pagination-links a,
+site-search button,
+.expressive-code * {
+  border-radius: 0 !important;
+}
+:root {
+  --sl-shadow-sm: none;
+  --sl-shadow-md: none;
+  --sl-shadow-lg: none;
+}
+
+/* serif headings, like the app */
+.sl-markdown-content :is(h1, h2, h3),
+h1#_top {
+  font-family: var(--abs-serif);
+  font-weight: 600;
+  letter-spacing: -0.005em;
+}
+
+/* sidebar group labels read like the app's mono step labels */
+.sidebar-content .group-label .large,
+.sidebar-content summary .large {
+  font-family: var(--sl-font-mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--sl-color-gray-3);
+}
+
+.sl-markdown-content kbd {
+  font-family: var(--sl-font-mono);
+  font-size: 0.8em;
+  border: 1px solid var(--sl-color-gray-5);
+  padding: 0 0.35em;
+}
+
+/* verdict chips used in the drafting guide */
+.verdict {
+  font-family: var(--sl-font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.05rem 0.4rem;
+  border: 1px solid currentColor;
+  white-space: nowrap;
+}
+.verdict.ok { color: #2e7d4f; }
+.verdict.partial { color: #a8781f; }
+.verdict.bad { color: #b3402e; }
+:root:not([data-theme="light"]) .verdict.ok { color: #7cc39a; }
+:root:not([data-theme="light"]) .verdict.partial { color: #d9b36a; }
+:root:not([data-theme="light"]) .verdict.bad { color: #e08a7b; }
+
+/* the wordmark logo sits at text height in the docs header */
+.site-title img {
+  height: 1.35rem;
+  width: auto;
+}

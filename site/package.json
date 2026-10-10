@@ -1,0 +1,16 @@
+{
+  "name": "abstract-site",
+  "private": true,
+  "type": "module",
+  "description": "useabstract.co — the abstract website and documentation",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "@astrojs/starlight": "^0.42.6",
+    "astro": "^7.3.8",
+    "sharp": "^0.35.3"
+  }
+}

@@ -4,6 +4,25 @@ All notable changes to abstract are recorded here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and versions follow
 [Semantic Versioning](https://semver.org/).
 
+## [0.1.1] — 2026-10-10
+
+### Added
+
+- Website and documentation at [useabstract.co](https://useabstract.co).
+
+### Fixed
+
+- Ollama: the address entered in Settings now works with or without `/v1`, and `OLLAMA_HOST`
+  takes precedence over it, like API keys do.
+- `abstract --help` now says what really happens without a folder: it reopens the last workspace
+  you used, else the current directory.
+
+### Changed
+
+- README: npm, license, and Bun badges, a link to the docs, and a more precise account of what
+  leaves your machine.
+- The Workspaces screen now says your files are *stored* on this machine.
+
 ## [0.1.0] — 2026-10-09
 
 The first open-source release.

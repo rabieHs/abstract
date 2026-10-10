@@ -21,6 +21,8 @@ is enforced in code, not requested in a prompt:
 
 > Drafting is agentic, verification is deterministic, approval is human.
 
+**Documentation: [useabstract.co/docs](https://useabstract.co/docs/)**
+
 ## Install
 
 abstract runs on [Bun](https://bun.sh) (1.1 or newer) on macOS and Linux.
@@ -65,12 +67,20 @@ finds in the source.
 
 ## Your data
 
-Everything lives on your machine. Your workspace folder holds your files and an `.openpaper/`
+Everything is stored on your machine. Your workspace folder holds your files and an `.openpaper/`
 folder with the library database. Global settings and API keys are in `~/.abstract/config.json`;
 a ChatGPT sign-in is stored in `~/.abstract/chatgpt-auth.json` (readable only by you).
 
-What leaves your machine: the text sent to the model provider you chose, and search queries and
-DOI lookups sent to OpenAlex, Crossref, arXiv, and doi.org.
+What leaves your machine:
+
+- **To the model provider you chose:** your messages and attachments, the passages the agent
+  retrieves to write and verify, and whole files in three cases — each newly ingested PDF (to
+  catalog its figures and tables), scanned PDFs (for OCR), and any file you ask it to look at
+  as a whole. Use a local model with Ollama to keep document content on your machine.
+- **To scholarly services:** search queries and DOI lookups sent to OpenAlex, Crossref, arXiv,
+  Unpaywall, and doi.org, and downloads of open-access PDFs you ask the agent to fetch.
+
+Full details: [useabstract.co/docs/privacy](https://useabstract.co/docs/privacy/).
 
 ## Contributing
 

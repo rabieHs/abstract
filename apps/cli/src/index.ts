@@ -7,7 +7,8 @@ import { createApp } from "@abstract/server"
 const HELP = `abstract — the AI research workbench with verified citations
 
 usage:
-  abstract [dir]          open a workspace (default: current directory)
+  abstract [dir]          open a workspace (default: the last one you opened,
+                          else the current directory)
   abstract --port <n>     serve on a specific port
   abstract --no-open      don't open the browser
 `

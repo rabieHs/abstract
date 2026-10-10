@@ -1,0 +1,195 @@
+---
+interface Props {
+  title: string
+  description: string
+}
+const { title, description } = Astro.props
+const canonical = new URL(Astro.url.pathname, Astro.site)
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <meta name="twitter:card" content="summary" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <script is:inline>
+      // follow the docs' theme switch (Starlight stores it), else the system setting
+      ;(() => {
+        let t = "auto"
+        try { t = localStorage.getItem("starlight-theme") || "auto" } catch {}
+        if (t === "auto") t = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"
+        document.documentElement.dataset.theme = t
+      })()
+    </script>
+    <style is:global>
+      /* the app's design system: squared, print-like, hairlines carry structure */
+      :root {
+        --paper: #f4f4f2;
+        --surface: #ffffff;
+        --ink: #26282b;
+        --muted: #6f747c;
+        --faint: #a9adb3;
+        --line: #e2e2de;
+        --accent: #2f5382;
+        --accent-soft: #eaeff6;
+        --ok: #2e7d4f;
+        --ok-soft: #e4f1e8;
+        --warn: #9a6c12;
+        --warn-soft: #f6edd7;
+        --bad: #b3402e;
+        --bad-soft: #f7e5e1;
+        --code-bg: #26282b;
+        --code-ink: #f4f4f2;
+        --serif: Charter, "Bitstream Charter", "Sitka Text", Cambria, Georgia, serif;
+        --mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+        --sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+      }
+      :root[data-theme="dark"] {
+        --paper: #1a1b1d;
+        --surface: #222427;
+        --ink: #ecebe7;
+        --muted: #9a9ea5;
+        --faint: #6a6f76;
+        --line: #33363a;
+        --accent: #8fb0dd;
+        --accent-soft: #1c2a3e;
+        --ok: #7cc39a;
+        --ok-soft: #1b2e23;
+        --warn: #d9b36a;
+        --warn-soft: #2f2716;
+        --bad: #e08a7b;
+        --bad-soft: #35201c;
+        --code-bg: #111214;
+        --code-ink: #ecebe7;
+      }
+      * { box-sizing: border-box; border-radius: 0 !important; box-shadow: none !important; }
+      html { scroll-behavior: smooth; }
+      body {
+        margin: 0; color: var(--ink); background: var(--paper);
+        font-family: var(--sans); line-height: 1.65; font-size: 16px;
+        -webkit-font-smoothing: antialiased;
+      }
+      ::selection { background: var(--accent-soft); }
+      h1, h2, h3 { font-family: var(--serif); font-weight: 600; line-height: 1.15; margin: 0; letter-spacing: -0.01em; }
+      p { margin: 0; }
+      a { color: inherit; }
+      img { max-width: 100%; }
+      .wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+      .label {
+        font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em;
+        text-transform: uppercase; color: var(--muted);
+      }
+      .muted { color: var(--muted); }
+      .btn {
+        display: inline-flex; align-items: center; gap: 8px;
+        background: var(--ink); color: var(--paper); border: 1px solid var(--ink);
+        padding: 11px 22px; font-size: 15px; font-weight: 500; text-decoration: none;
+        transition: background 0.15s, border-color 0.15s, color 0.15s; cursor: pointer;
+      }
+      .btn:hover { background: var(--accent); border-color: var(--accent); color: #fff; }
+      .btn.ghost { background: transparent; color: var(--ink); border-color: var(--line); }
+      .btn.ghost:hover { border-color: var(--accent); color: var(--accent); background: transparent; }
+      code { font-family: var(--mono); font-size: 0.88em; }
+
+      nav.top {
+        position: sticky; top: 0; z-index: 40;
+        background: color-mix(in srgb, var(--paper) 90%, transparent);
+        backdrop-filter: blur(8px); border-bottom: 1px solid var(--line);
+      }
+      nav.top .inner { display: flex; align-items: center; gap: 24px; height: 60px; }
+      nav.top .brand img { height: 21px; display: block; }
+      :root[data-theme="dark"] nav.top .brand img,
+      :root[data-theme="dark"] footer .brand img { filter: invert(0.93); }
+      nav.top a.l { color: var(--muted); text-decoration: none; font-size: 14.5px; }
+      nav.top a.l:hover { color: var(--ink); }
+      nav.top .right { margin-left: auto; display: flex; align-items: center; gap: 20px; }
+      @media (max-width: 640px) { nav.top .hide-sm { display: none; } }
+
+      footer { border-top: 1px solid var(--line); margin-top: 110px; background: var(--surface); }
+      footer .inner {
+        display: grid; grid-template-columns: 1.6fr repeat(3, 1fr); gap: 28px;
+        padding: 44px 24px 28px; font-size: 14px;
+      }
+      footer .brand img { height: 19px; display: block; margin-bottom: 12px; }
+      footer h4 { font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin: 0 0 10px; font-weight: 500; }
+      footer a { display: block; color: var(--ink); text-decoration: none; padding: 3px 0; }
+      footer a:hover { color: var(--accent); }
+      footer .legal { grid-column: 1 / -1; border-top: 1px solid var(--line); padding-top: 18px; color: var(--muted); font-size: 12.5px; }
+      @media (max-width: 760px) { footer .inner { grid-template-columns: 1fr 1fr; } footer .about { grid-column: 1 / -1; } }
+
+      .reveal { opacity: 0; transform: translateY(14px); transition: opacity 0.6s ease, transform 0.6s ease; transition-delay: var(--d, 0s); }
+      .reveal.in { opacity: 1; transform: none; }
+      @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } }
+    </style>
+  </head>
+  <body>
+    <nav class="top">
+      <div class="inner wrap">
+        <a class="brand" href="/" aria-label="abstract home"><img src="/logo.png" alt="abstract" /></a>
+        <a class="l hide-sm" href="/#how">How it works</a>
+        <a class="l hide-sm" href="/#models">Models</a>
+        <a class="l" href="/docs/">Docs</a>
+        <span class="right">
+          <a class="l hide-sm" href="https://www.npmjs.com/package/abstract-cli">npm</a>
+          <a class="btn ghost" style="padding: 7px 14px; font-size: 13.5px;" href="https://github.com/rabieHs/abstract">GitHub</a>
+        </span>
+      </div>
+    </nav>
+    <slot />
+    <footer>
+      <div class="inner wrap">
+        <div class="about">
+          <span class="brand"><img src="/logo.png" alt="abstract" /></span>
+          <p class="muted" style="max-width: 34ch;">
+            The research workbench that won't write a citation it can't trace to a real source.
+          </p>
+        </div>
+        <div>
+          <h4>Product</h4>
+          <a href="/#how">How it works</a>
+          <a href="/#models">Models</a>
+          <a href="/#privacy">Privacy</a>
+        </div>
+        <div>
+          <h4>Docs</h4>
+          <a href="/docs/install/">Install</a>
+          <a href="/docs/quick-start/">Quick start</a>
+          <a href="/docs/troubleshooting/">Troubleshooting</a>
+        </div>
+        <div>
+          <h4>Open source</h4>
+          <a href="https://github.com/rabieHs/abstract">GitHub</a>
+          <a href="https://www.npmjs.com/package/abstract-cli">npm</a>
+          <a href="https://github.com/rabieHs/abstract/blob/main/LICENSE">Apache-2.0</a>
+        </div>
+        <p class="legal">abstract is free, open-source software. Your papers, notes, and drafts are stored on your machine.</p>
+      </div>
+    </footer>
+    <script is:inline>
+      const io = new IntersectionObserver(
+        (es) => es.forEach((e) => e.isIntersecting && e.target.classList.add("in")),
+        { threshold: 0.1 },
+      )
+      document.querySelectorAll(".reveal").forEach((el) => io.observe(el))
+      document.querySelectorAll("[data-copy]").forEach((b) =>
+        b.addEventListener("click", async () => {
+          try {
+            await navigator.clipboard.writeText(b.getAttribute("data-copy"))
+            const t = b.textContent
+            b.textContent = "copied"
+            setTimeout(() => (b.textContent = t), 1400)
+          } catch {}
+        }),
+      )
+    </script>
+  </body>
+</html>
