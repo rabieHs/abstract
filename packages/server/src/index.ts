@@ -156,7 +156,9 @@ export function createApp(options: ServerOptions) {
     await next()
   })
 
-  app.get("/api/health", (c) => c.json({ ok: true, name: "abstract", version: "0.1.0" }))
+  app.get("/api/health", (c) =>
+    c.json({ ok: true, name: "abstract", version: process.env["ABSTRACT_VERSION"] ?? "dev" }),
+  )
 
   app.get("/api/workspace", (c) =>
     c.json({ name: workspace.name, root: workspace.root }),

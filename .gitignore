@@ -7,6 +7,8 @@ dist/
 .DS_Store
 apps/cli/dist/
 apps/cli/*.tgz
+apps/cli/dist-bin/
+apps/cli/.build/
 # copied in by apps/cli/scripts/bundle.ts for the npm package
 apps/cli/README.md
 apps/cli/LICENSE

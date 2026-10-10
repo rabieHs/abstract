@@ -1,0 +1,11 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Documentation
+    url: https://useabstract.co/docs/
+    about: Install, quick start, and guides for every part of the workflow.
+  - name: Troubleshooting
+    url: https://useabstract.co/docs/troubleshooting/
+    about: Common messages and how to fix them.
+  - name: Report a security problem
+    url: https://github.com/rabieHs/abstract/security/advisories/new
+    about: Please report vulnerabilities privately, not as a public issue.

@@ -4,6 +4,23 @@ All notable changes to abstract are recorded here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and versions follow
 [Semantic Versioning](https://semver.org/).
 
+## [0.2.0] — 2026-10-10
+
+### Added
+
+- **Standalone builds** for macOS (Apple Silicon and Intel) and Linux (x64 and arm64): one file
+  with everything inside — no Bun or Node needed.
+- **One-line installer:** `curl -fsSL https://useabstract.co/install.sh | sh` downloads the build
+  for your system, verifies its SHA-256 checksum, and installs it to `~/.local/bin`.
+- Releases are built by GitHub Actions from the tagged source, with checksums and
+  build-provenance attestations you can verify.
+- `abstract --version`.
+- Automated tests on every change, issue templates, and a security policy with private reporting.
+
+### Changed
+
+- The app's health check reports its real version.
+
 ## [0.1.1] — 2026-10-10
 
 ### Added

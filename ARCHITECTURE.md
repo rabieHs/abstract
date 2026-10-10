@@ -176,7 +176,7 @@ TypeScript everywhere in the core: one language across CLI, server, agent, and U
 lets us port OpenScience's Apache-licensed TS connectors directly.
 
 **Runtime & CLI**
-- **Bun** + TypeScript monorepo; compiled per-platform binaries later, `npm i -g @abstract/cli`
+- **Bun** + TypeScript monorepo; shipped as standalone per-platform executables (one-line installer) and as the `abstract-cli` npm package
   from day one. CLI via **clipanion** (or commander).
 - **Hono** local HTTP server (binds 127.0.0.1, Host/Origin allowlist) serving the workspace UI
   + session API; **SSE** for streaming chat, tool calls, and the live activity feed.

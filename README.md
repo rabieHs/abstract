@@ -1,5 +1,7 @@
 # abstract
 
+[![CI](https://github.com/rabieHs/abstract/actions/workflows/ci.yml/badge.svg)](https://github.com/rabieHs/abstract/actions/workflows/ci.yml)
+[![release](https://img.shields.io/github/v/release/rabieHs/abstract?label=release&color=111)](https://github.com/rabieHs/abstract/releases)
 [![npm](https://img.shields.io/npm/v/abstract-cli?label=npm&color=111)](https://www.npmjs.com/package/abstract-cli)
 [![license](https://img.shields.io/npm/l/abstract-cli?color=111)](LICENSE)
 [![runtime: Bun](https://img.shields.io/badge/runtime-Bun-111)](https://bun.sh)
@@ -25,12 +27,24 @@ is enforced in code, not requested in a prompt:
 
 ## Install
 
-abstract runs on [Bun](https://bun.sh) (1.1 or newer) on macOS and Linux.
+On macOS or Linux, paste this into a terminal — nothing else is needed:
 
 ```bash
-bun install -g abstract-cli     # or: npm i -g abstract-cli  (Bun must still be installed)
+curl -fsSL https://useabstract.co/install.sh | sh
+```
+
+Then open a new terminal and start a workspace:
+
+```bash
 abstract ~/my-thesis            # opens the workspace in your browser
 ```
+
+The installer downloads the build for your system from
+[GitHub Releases](https://github.com/rabieHs/abstract/releases), verifies its checksum, and puts
+`abstract` in `~/.local/bin`. Releases are built by GitHub Actions from this repository, with
+build-provenance attestations ([how to verify](https://useabstract.co/docs/install/#where-the-files-come-from)).
+
+Already using [Bun](https://bun.sh)? `bun install -g abstract-cli` works too.
 
 Run `abstract` with no argument to reopen your last workspace. `abstract --help` lists the options.
 

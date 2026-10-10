@@ -9,6 +9,8 @@ everything else.
 ## Where things live
 
 ```text
+~/.local/bin/abstract  the program (when installed with the installer)
+
 ~/.abstract/
   config.json          keys, chosen model, port, recent workspaces, budgets
   chatgpt-auth.json    your ChatGPT sign-in (readable only by you)
@@ -19,6 +21,9 @@ everything else.
   sources/  drafts/  figures/  analysis/
   .openpaper/          library database, conversations, memory, reading notes
 ```
+
+The standalone program also unpacks its interface once per version into your cache folder
+(`~/Library/Caches/abstract` on macOS, `~/.cache/abstract` on Linux). It's safe to delete.
 
 ## config.json
 

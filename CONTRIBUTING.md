@@ -51,6 +51,19 @@ Docs pages are Markdown in `site/src/content/docs/docs/`; the landing page is
 `site/src/pages/index.astro`. Keep the docs true to the code — when you change behavior, update the
 page that describes it.
 
+## Releasing
+
+1. Bump `"version"` in `apps/cli/package.json` and add a section to `CHANGELOG.md`.
+2. Commit, then tag and push: `git tag v0.2.0 && git push origin v0.2.0`.
+3. The **Release** workflow checks the tag matches the version, runs the tests, builds the
+   standalone executables for every platform, attests them, and publishes the GitHub release with
+   `SHA256SUMS` — the installer picks it up automatically.
+4. Publish the npm package: `bun run package`, then
+   `npm publish apps/cli/abstract-cli-<version>.tgz` (needs the npm owner's 2FA).
+5. Deploy the website if the docs changed: `cd site && vercel deploy --prod`.
+
+To build a standalone executable locally: `bun run standalone` (output in `apps/cli/dist-bin/`).
+
 ## Before you open a pull request
 
 ```bash

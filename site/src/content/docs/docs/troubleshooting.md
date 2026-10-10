@@ -5,9 +5,24 @@ description: Common messages and how to fix them.
 
 ## Installing and starting
 
+**`command not found: abstract` right after installing**
+Open a **new** terminal window — the installer added `~/.local/bin` to your `PATH`, and only new
+windows pick that up. Or run `export PATH="$HOME/.local/bin:$PATH"` in the current one.
+
+**`checksum mismatch — … nothing was installed`**
+The download was corrupted or interrupted. Run the installer again.
+
+**macOS says *"abstract" cannot be opened because the developer cannot be verified***
+This happens if you downloaded the file through a web browser instead of the installer. Use the
+installer, or clear the download flag: `xattr -d com.apple.quarantine ./abstract`.
+
+**`musl-based Linux … isn't supported`**
+The standalone build needs a glibc Linux (Ubuntu, Debian, Fedora, Arch…). On Alpine, install
+[with Bun](/docs/install/#for-developers--npm-or-bun) instead.
+
 **`env: bun: No such file or directory`**
-abstract runs on Bun, even when installed with npm. [Install Bun](/docs/install/), open a new
-terminal, and try again.
+You installed the npm package, which runs on Bun. Use the [installer](/docs/install/) instead —
+it needs nothing else — or [install Bun](https://bun.sh).
 
 **`port 4477 is in use — trying 4478`**
 That's fine — abstract picked the next free port; use the address it prints. To choose one

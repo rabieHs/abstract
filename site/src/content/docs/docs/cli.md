@@ -8,6 +8,7 @@ abstract [dir]          open a workspace (default: the last one you opened,
                         else the current directory)
 abstract --port <n>     serve on a specific port
 abstract --no-open      don't open the browser
+abstract --version      print the version
 ```
 
 | Option | What it does |
@@ -15,6 +16,7 @@ abstract --no-open      don't open the browser
 | `dir` | The folder to open as a workspace. `~` works. Without it, abstract reopens the last workspace that still exists, or uses the current directory. |
 | `--port <n>`, `-p <n>` | The port to use. The default is `4477` (change it permanently with `port` in [config.json](/docs/configuration/)). |
 | `--no-open` | Start without opening a browser tab. |
+| `--version`, `-v` | Print the installed version, e.g. `abstract 0.2.0`. |
 | `--help`, `-h` | Print the usage text. |
 
 ## What happens when it starts

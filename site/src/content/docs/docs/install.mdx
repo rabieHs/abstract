@@ -1,69 +1,108 @@
 ---
 title: Install
-description: Install abstract with Bun or npm on macOS or Linux.
+description: Install abstract on macOS or Linux with one command — nothing else needed.
 ---
 
 import { Steps, Tabs, TabItem } from "@astrojs/starlight/components"
 
-abstract runs on **macOS and Linux** and needs **[Bun](https://bun.sh) 1.1 or newer** — the
-`abstract` command runs on Bun even if you install it with npm.
+abstract runs on **macOS** (Apple Silicon and Intel) and **Linux** (x64 and arm64).
+
+## The easy way — one command
 
 <Steps>
 
-1. **Install Bun** (skip this if `bun --version` already works):
+1. **Open a terminal.** On a Mac: press <kbd>⌘</kbd>+<kbd>Space</kbd>, type *Terminal*, and press
+   <kbd>Enter</kbd>.
+
+2. **Paste this and press Enter:**
 
    ```bash
-   curl -fsSL https://bun.sh/install | bash
+   curl -fsSL https://useabstract.co/install.sh | sh
    ```
 
-   Open a new terminal afterwards so the `bun` command is found.
+   It downloads abstract for your computer, checks it, and installs it. Nothing else is needed —
+   no Bun, no Node, no admin password.
 
-2. **Install abstract:**
-
-   <Tabs>
-     <TabItem label="Bun">
-       ```bash
-       bun install -g abstract-cli
-       ```
-     </TabItem>
-     <TabItem label="npm">
-       ```bash
-       npm i -g abstract-cli
-       ```
-     </TabItem>
-   </Tabs>
-
-3. **Check it works:**
+3. **Open a new terminal window** (so it finds the new command), then check it works:
 
    ```bash
-   abstract --help
+   abstract --version
    ```
-
-   You should see the usage text. The package is called `abstract-cli`; the command is `abstract`.
 
 </Steps>
 
-Next: the [quick start](/docs/quick-start/) walks you from an empty folder to a verified draft.
+Next: the [quick start](/docs/quick-start/) takes you from an empty folder to a verified draft.
+
+### What the installer does
+
+- Detects your system and downloads the matching file from
+  [GitHub Releases](https://github.com/rabieHs/abstract/releases).
+- **Verifies its SHA-256 checksum** against the published `SHA256SUMS` — if they don't match, it
+  stops and installs nothing.
+- Puts the `abstract` command in `~/.local/bin`, and adds that folder to your `PATH` in your shell's
+  startup file (`~/.zshrc`, `~/.bashrc`, …) if it isn't there already.
+
+You can read the script first: [useabstract.co/install.sh](https://useabstract.co/install.sh).
+Options are set with environment variables:
+
+```bash
+# a specific version
+curl -fsSL https://useabstract.co/install.sh | ABSTRACT_VERSION=0.2.0 sh
+# another folder, without touching your shell files
+curl -fsSL https://useabstract.co/install.sh | ABSTRACT_INSTALL_DIR=~/bin ABSTRACT_NO_MODIFY_PATH=1 sh
+```
+
+### Where the files come from
+
+Every release is built by [GitHub Actions](https://github.com/rabieHs/abstract/actions) from the
+public source code, on GitHub's own machines — not on anyone's laptop. Each file comes with a
+**build-provenance attestation**, and you can verify it with the
+[GitHub CLI](https://cli.github.com/):
+
+```bash
+gh attestation verify abstract-darwin-arm64.tar.gz --repo rabieHs/abstract
+```
+
+## For developers — npm or Bun
+
+If you already use [Bun](https://bun.sh) (1.1 or newer), you can install the package instead. This
+version runs on your Bun:
+
+<Tabs>
+  <TabItem label="Bun">
+    ```bash
+    bun install -g abstract-cli
+    ```
+  </TabItem>
+  <TabItem label="npm">
+    ```bash
+    npm i -g abstract-cli   # Bun must still be installed to run it
+    ```
+  </TabItem>
+</Tabs>
 
 ## Update
 
-Install the latest version over the old one:
+Run the installer again — it replaces the old version and keeps your settings and workspaces:
 
 ```bash
-bun install -g abstract-cli@latest   # or: npm i -g abstract-cli@latest
+curl -fsSL https://useabstract.co/install.sh | sh
 ```
 
+With npm or Bun: `npm i -g abstract-cli@latest` or `bun install -g abstract-cli@latest`.
+
 Then restart abstract (stop it with <kbd>Ctrl</kbd>+<kbd>C</kbd> and run `abstract` again).
-Your settings and workspaces are kept.
 
 ## Uninstall
 
 ```bash
-bun remove -g abstract-cli   # or: npm uninstall -g abstract-cli
+rm ~/.local/bin/abstract        # installed with the installer
+npm uninstall -g abstract-cli    # or with npm / bun remove -g abstract-cli
 ```
 
 This removes the program only. Your data stays where it is: settings, keys, and skills in
-`~/.abstract`, and each workspace in its own folder. Delete those yourself if you want them gone.
+`~/.abstract`, and each workspace in its own folder. Delete those yourself if you want them gone,
+and remove the `# added by the abstract installer` line from your shell's startup file.
 
 :::note[Windows]
 Windows isn't supported directly. Running abstract inside WSL (Linux on Windows) may work, but it

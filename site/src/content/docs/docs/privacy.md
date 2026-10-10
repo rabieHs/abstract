@@ -36,6 +36,9 @@ OpenAlex, Crossref, arXiv, Unpaywall (with the email in `UNPAYWALL_EMAIL`), and 
 
 **To OpenAI's sign-in service** — only if you use Continue with ChatGPT.
 
+**To GitHub** — only when you install or update: the installer downloads the program and its
+checksums from GitHub Releases. The app itself doesn't check for updates or send usage data.
+
 ## Keeping document content local
 
 Use [Ollama](/docs/models/#a-local-model-with-ollama) as your only provider. Model requests —

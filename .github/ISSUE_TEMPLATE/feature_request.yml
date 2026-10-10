@@ -1,0 +1,21 @@
+name: Feature request
+description: Suggest an idea or a change to how abstract works.
+labels: [enhancement]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What are you trying to do?
+      description: Describe the research task or problem, not just the solution.
+    validations:
+      required: true
+  - type: textarea
+    id: idea
+    attributes:
+      label: What would help
+      description: How you imagine it working. Mock-ups and examples welcome.
+  - type: textarea
+    id: context
+    attributes:
+      label: Anything else
+      description: Field of research, venue, citation style, or tools you use alongside abstract.

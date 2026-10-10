@@ -1,0 +1,51 @@
+name: Bug report
+description: Something doesn't work the way the docs say it should.
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting. Many messages have a fix in the [troubleshooting guide](https://useabstract.co/docs/troubleshooting/) — worth a quick look first.
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: What you did, what you expected, and what happened instead. Paste the exact message if there was one.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Open a workspace with …
+        2. Ask "…"
+        3. …
+  - type: input
+    id: version
+    attributes:
+      label: abstract version
+      description: Run `abstract --version`.
+      placeholder: abstract 0.2.0
+    validations:
+      required: true
+  - type: dropdown
+    id: install
+    attributes:
+      label: How you installed it
+      options:
+        - Installer script (curl … | sh)
+        - npm / Bun (abstract-cli)
+        - From source
+    validations:
+      required: true
+  - type: input
+    id: system
+    attributes:
+      label: Operating system
+      placeholder: macOS 15 (Apple Silicon) / Ubuntu 24.04 …
+  - type: input
+    id: model
+    attributes:
+      label: Model
+      description: The model shown under the chat box, e.g. chatgpt/gpt-6.1-sol or anthropic/claude-sonnet-5-5.

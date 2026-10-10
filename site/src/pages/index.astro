@@ -1,7 +1,7 @@
 ---
 import Landing from "../layouts/Landing.astro"
 
-const install = "bun install -g abstract-cli"
+const install = "curl -fsSL https://useabstract.co/install.sh | sh"
 
 // The demo uses real papers and VERBATIM quotes (checked against the arXiv
 // abstracts) — a page about not inventing citations must not invent any.
@@ -69,9 +69,11 @@ const features = [
     .cta { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-top: 28px; }
     .install {
       display: flex; align-items: center; justify-content: space-between; gap: 12px;
-      max-width: 460px; margin: 26px auto 0; background: var(--code-bg); color: var(--code-ink);
+      max-width: 600px; margin: 26px auto 0; background: var(--code-bg); color: var(--code-ink);
       font-family: var(--mono); font-size: 14px; padding: 12px 14px 12px 18px;
     }
+    .install > span { overflow-x: auto; white-space: nowrap; scrollbar-width: none; text-align: left; }
+    .install > span::-webkit-scrollbar { display: none; }
     .install .p { opacity: 0.5; margin-right: 8px; }
     .install button {
       font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;
@@ -155,6 +157,8 @@ const features = [
     .final { text-align: center; padding-top: 110px; }
     .final h2 { font-size: clamp(28px, 4vw, 42px); }
     .final p { color: var(--muted); margin-top: 10px; font-size: 17px; }
+    .final p.fine { font-size: 13px; max-width: 540px; margin: 14px auto 0; }
+    .fine a { color: var(--accent); }
 
     @media (max-width: 900px) {
       .demo { grid-template-columns: 1fr; }
@@ -187,7 +191,7 @@ const features = [
       <span><span class="p">$</span>{install}</span>
       <button type="button" data-copy={install}>copy</button>
     </div>
-    <p class="fine">or <code>npm i -g abstract-cli</code> · needs <a href="https://bun.sh">Bun</a> · macOS and Linux</p>
+    <p class="fine">macOS and Linux · nothing else to install · developers: <code>bun install -g abstract-cli</code></p>
     <div class="cta">
       <a class="btn" href="/docs/quick-start/">Get started</a>
       <a class="btn ghost" href="/docs/">Read the docs</a>
@@ -362,11 +366,15 @@ const features = [
   <section class="final wrap reveal">
     <span class="label">free and open source · apache-2.0</span>
     <h2 style="margin-top: 10px;">Your next review, with receipts.</h2>
-    <p>Install in one line. No account, no subscription.</p>
+    <p>Install in one line. No account, no subscription, nothing else to install.</p>
     <div class="install" role="group" aria-label="install command">
       <span><span class="p">$</span>{install}</span>
       <button type="button" data-copy={install}>copy</button>
     </div>
+    <p class="fine">
+      Every release is built by GitHub Actions from the public source, and the installer checks its
+      checksum before installing. <a href="/docs/install/#where-the-files-come-from">How to verify</a>
+    </p>
     <div class="cta">
       <a class="btn" href="/docs/quick-start/">Get started</a>
       <a class="btn ghost" href="https://github.com/rabieHs/abstract">View on GitHub</a>

@@ -11,6 +11,7 @@
     "dev:web": "bun run --cwd apps/web dev",
     "build": "bun run --cwd apps/web build",
     "package": "bun run build && bun run --cwd apps/cli bundle && cd apps/cli && npm pack",
+    "standalone": "bun run build && bun run --cwd apps/cli compile",
     "typecheck": "tsc --noEmit -p packages/core && tsc --noEmit -p packages/providers && tsc --noEmit -p packages/ingest && tsc --noEmit -p packages/scholar && tsc --noEmit -p packages/server && tsc --noEmit -p packages/verifier && tsc --noEmit -p apps/cli && tsc --noEmit -p apps/web",
     "test": "bun test packages"
   },

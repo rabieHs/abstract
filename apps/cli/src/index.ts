@@ -3,6 +3,7 @@ import { existsSync } from "node:fs"
 import { join, resolve } from "node:path"
 import { GLOBAL_DIR, loadConfig, migrateLegacyGlobalDir } from "@abstract/core"
 import { createApp } from "@abstract/server"
+import pkg from "../package.json"
 
 const HELP = `abstract — the AI research workbench with verified citations
 
@@ -11,9 +12,19 @@ usage:
                           else the current directory)
   abstract --port <n>     serve on a specific port
   abstract --no-open      don't open the browser
+  abstract --version      print the version
 `
 
 const args = process.argv.slice(2)
+if (args.includes("--help") || args.includes("-h")) {
+  console.log(HELP)
+  process.exit(0)
+}
+if (args.includes("--version") || args.includes("-v")) {
+  console.log(`abstract ${pkg.version}`)
+  process.exit(0)
+}
+process.env["ABSTRACT_VERSION"] = pkg.version
 
 // settings moved from ~/.openpaper to ~/.abstract — carry existing users over once
 const moved = migrateLegacyGlobalDir()
@@ -28,10 +39,7 @@ let openBrowser = true
 
 for (let i = 0; i < args.length; i++) {
   const a = args[i]!
-  if (a === "--help" || a === "-h") {
-    console.log(HELP)
-    process.exit(0)
-  } else if (a === "--port" || a === "-p") {
+  if (a === "--port" || a === "-p") {
     port = Number(args[++i])
   } else if (a === "--no-open") {
     openBrowser = false
@@ -40,15 +48,18 @@ for (let i = 0; i < args.length; i++) {
   }
 }
 
-// bundled layout: dist/index.js + dist/web ; repo layout: apps/cli/src + apps/web/dist
+// web UI location — standalone build: unpacked to ABSTRACT_WEB_DIR by standalone.ts;
+// npm bundle: dist/index.js + dist/web ; repo: apps/cli/src + apps/web/dist
 // no explicit dir → reopen the last-used workspace (fall back to cwd)
 if (!dir) {
   dir = loadConfig().recentWorkspaces.find((r) => existsSync(r)) ?? process.cwd()
 }
 
-const staticDir = [join(import.meta.dir, "web"), join(import.meta.dir, "../../web/dist")].find(
-  existsSync,
-)
+const staticDir = [
+  process.env["ABSTRACT_WEB_DIR"],
+  join(import.meta.dir, "web"),
+  join(import.meta.dir, "../../web/dist"),
+].find((d): d is string => Boolean(d) && existsSync(d!))
 const hasStatic = staticDir !== undefined
 
 const { app, workspace } = createApp({
